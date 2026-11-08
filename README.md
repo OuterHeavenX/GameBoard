@@ -36,3 +36,7 @@ Change the `CATS` array (categories) and `M` rows (`[repo, display name, categor
 ## Changes from the original zip
 
 The original was a Next/vinext app that needed OpenAI Sites hosting (a D1 database and an `/api/projects` route), so it could not run from GitHub. This version replaces that with static hosting and local storage. See the notes in the pull request or commit message for the bugs fixed along the way.
+
+## Design
+
+Visual rules live in [DESIGN.md](DESIGN.md). Point your AI at it before any UI change.
