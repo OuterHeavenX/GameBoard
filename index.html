@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>try{var t=localStorage.getItem("gameboard.theme");if(!t&&matchMedia("(prefers-color-scheme:dark)").matches)t="dark";if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="theme-color" content="#f7f8f5">
 <title>Gameboard · OuterHeavenX project board</title>
 <meta name="description" content="Every OuterHeavenX game and app, sorted by category, with live GitHub status.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23264c3b'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23d6eab8'%3E%E2%96%A6%3C/text%3E%3C/svg%3E">
@@ -77,6 +79,90 @@ aside nav button svg{flex-shrink:0}
 
 footer .linkish{text-decoration:underline;font-size:inherit;letter-spacing:inherit;color:inherit;padding:2px}
 
+:root{color-scheme:light}
+html[data-theme=dark]{color-scheme:dark}
+html[data-theme=dark] body{background:#121714;color:#dfe8e0}
+html[data-theme=dark] aside{background:#171e19;border-color:#243029}
+html[data-theme=dark] .workspace .avatar, html[data-theme=dark] .avatar{background:#243a2e;color:#b6cfb8}
+html[data-theme=dark] .workspace small, html[data-theme=dark] .navlabel, html[data-theme=dark] .sidebottom, html[data-theme=dark] .sidebottom p{color:#8fa092}
+html[data-theme=dark] .sidebottom strong{color:#cfe0c8}
+html[data-theme=dark] .sidebottom .bk button{background:#1b241e;border-color:#2f3d33;color:#cfe0c8}
+html[data-theme=dark] .sidebottom .bk button:hover{background:#243a2e}
+html[data-theme=dark] .sidebottom .linkish, html[data-theme=dark] footer .linkish{color:#9db0a0}
+html[data-theme=dark] nav button{color:#9db0a0}
+html[data-theme=dark] nav button.selected{background:#243a2e;color:#d6eab8}
+html[data-theme=dark] aside nav button .cnt{color:#7f917f}
+html[data-theme=dark] aside nav button.selected .cnt{color:#a9c98a}
+html[data-theme=dark] nav button b{background:#5a4a2a;color:#f0dcae}
+html[data-theme=dark] header{border-color:#243029;color:#9aab9d}
+html[data-theme=dark] .slash{color:#566459}
+html[data-theme=dark] .eyebrow{color:#8fb07a}
+html[data-theme=dark] p.subtitle, html[data-theme=dark] .blurb, html[data-theme=dark] .sectionhead>div>span, html[data-theme=dark] .secthead .n, html[data-theme=dark] .ghnote{color:#8fa092}
+html[data-theme=dark] .ghnote.warn{color:#e0b86a}
+html[data-theme=dark] .secthead a{color:#9cc48a}
+html[data-theme=dark] .primary{background:#3d7358;border-color:#3d7358;color:#fff}
+html[data-theme=dark] .primary:hover{background:#4a8566}
+html[data-theme=dark] .secondary{background:#243a2e;color:#cfe6c4}
+html[data-theme=dark] .iconbtn:hover{background:#243029}
+html[data-theme=dark] .stats>button, html[data-theme=dark] .card, html[data-theme=dark] .search, html[data-theme=dark] .history, html[data-theme=dark] .qacard, html[data-theme=dark] .welcome{background:#19211c;border-color:#2a362e}
+html[data-theme=dark] .stats span, html[data-theme=dark] .stats small{color:#8fa092}
+html[data-theme=dark] .stats span svg{color:#7f9484}
+html[data-theme=dark] .search{color:#8fa092}
+html[data-theme=dark] .search input{color:#dfe8e0}
+html[data-theme=dark] .filters button{color:#9db0a0}
+html[data-theme=dark] .filters .on{background:#243a2e;color:#d6eab8}
+html[data-theme=dark] .card:hover{border-color:#4d6b57;box-shadow:0 8px 24px #00000055}
+html[data-theme=dark] .gameicon{background:#243a2e;color:#a9c98a}
+html[data-theme=dark] .color1{background:#3a2f22;color:#d9b27a}
+html[data-theme=dark] .color2{background:#22333a;color:#8fb7c6}
+html[data-theme=dark] .color3{background:#2f2838;color:#b9a2cc}
+html[data-theme=dark] .badge{background:#243029;color:#a8b8a8}
+html[data-theme=dark] .blue{background:#223a2e;color:#9cc4ad}
+html[data-theme=dark] .amber{background:#3d3220;color:#e0b86a}
+html[data-theme=dark] .green{background:#26391f;color:#a6cf7e}
+html[data-theme=dark] .badge.paused{background:#272e29;color:#97a393}
+html[data-theme=dark] .badge.review{background:#3d3220;color:#e0b86a;border-color:#6b5628}
+html[data-theme=dark] .badge.new{background:#1f3347;color:#8fbbe6}
+html[data-theme=dark] .cardarrow{color:#7f9484}
+html[data-theme=dark] .meta, html[data-theme=dark] .nextlabel, html[data-theme=dark] .cardfoot, html[data-theme=dark] .catchip{color:#8fa092}
+html[data-theme=dark] .desc{color:#a9b9a9}
+html[data-theme=dark] .nexttext{color:#b5c7aa}
+html[data-theme=dark] .tags span{border-color:#2f3d33;color:#9fb394}
+html[data-theme=dark] .carddivider{background:#27322b}
+html[data-theme=dark] .cardlinks a{background:#1b241e;border-color:#2f3d33;color:#b5c7aa}
+html[data-theme=dark] .cardlinks a:hover{background:#243a2e;border-color:#4d6b57}
+html[data-theme=dark] .qa-note{background:#18221c;border-color:#27342b}
+html[data-theme=dark] .qa-note p{color:#94a58a}
+html[data-theme=dark] .qa-note .badge{border-color:#33443a;color:#8fa381;background:none}
+html[data-theme=dark] .noteicon{color:#8fb07a}
+html[data-theme=dark] footer{color:#7f9484}
+html[data-theme=dark] .welcome p, html[data-theme=dark] .empty{color:#94a58a}
+html[data-theme=dark] .empty h3, html[data-theme=dark] .welcome h3{color:#cfe0c8}
+html[data-theme=dark] .textbtn{color:#9db0a0}
+html[data-theme=dark] .error{background:#3b1f1a;border-color:#5a2c24;color:#f0b5a6}
+html[data-theme=dark] .warning{background:#3d3220;border-color:#5c4a28;color:#e6c27a}
+html[data-theme=dark] .overlay{background:#050a07b8}
+html[data-theme=dark] .editor{background:#141a16;box-shadow:-12px 0 60px #00000080}
+html[data-theme=dark] .edithead, html[data-theme=dark] .edittabs{border-color:#27322b}
+html[data-theme=dark] .edithead small{color:#8fa092}
+html[data-theme=dark] .edittabs button{color:#93a58a}
+html[data-theme=dark] .edittabs button.on{color:#d6eab8;border-color:#8fc49f}
+html[data-theme=dark] .editbody label{color:#a9b9a1}
+html[data-theme=dark] .editbody input, html[data-theme=dark] .editbody textarea, html[data-theme=dark] .editbody select{background:#1b241e;border-color:#2f3d33;color:#e0ebd9}
+html[data-theme=dark] .editfoot{background:#171e19;border-color:#27322b}
+html[data-theme=dark] .editfoot small, html[data-theme=dark] .help{color:#93a58a}
+html[data-theme=dark] .formsection{color:#cfe0c8}
+html[data-theme=dark] .targetchoices button{background:#1b241e;border-color:#2f3d33;color:#b5c7aa}
+html[data-theme=dark] .targetchoices button.on{background:#243a2e;border-color:#4d7a5d;color:#d6eab8}
+html[data-theme=dark] .priorityinput b{background:#243a2e;color:#cfe0c8}
+html[data-theme=dark] .danger{color:#e08f78}
+html[data-theme=dark] .ghinfo{background:#18221c;border-color:#27342b;color:#9fb094}
+html[data-theme=dark] .ghinfo b{color:#cfe6c4}
+html[data-theme=dark] .historyrow{border-color:#27322b;color:#9db08f}
+html[data-theme=dark] .historyrow strong{color:#cfe6c4}
+html[data-theme=dark] .toast{background:#2f5a45}
+html[data-theme=dark] button:focus-visible, html[data-theme=dark] a:focus-visible{outline-color:#8fc49f}
+@media(max-width:760px){html[data-theme=dark] aside{background:#171e19;border-color:#243029}}}
 </style>
 </head>
 <body>
@@ -196,6 +282,23 @@ const qaDefaults=()=>[
 const defaults=()=>({name:'',cat:'lab',engine:'',version:'',status:'',repo:'',live:'',itch:'',build:'',targets:['Browser'],bugs:'',done:'',pending:'',priorities:['','',''],blocker:'',qa:qaDefaults(),logs:[],confirmed:false});
 const FIELDS=['name','cat','engine','version','status','repo','live','itch','build','targets','bugs','done','pending','priorities','blocker','qa','logs','confirmed'];
 
+/* ---------- theme ---------- */
+const isDark=()=>document.documentElement.dataset.theme==='dark';
+function applyTheme(t){
+ document.documentElement.dataset.theme=t;
+ const m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='dark'?'#121714':'#f7f8f5';
+}
+function toggleTheme(){
+ const t=isDark()?'light':'dark';applyTheme(t);
+ try{localStorage.setItem('gameboard.theme',t)}catch(e){}
+ render();
+}
+try{window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',e=>{
+ let saved=null;try{saved=localStorage.getItem('gameboard.theme')}catch(x){}
+ if(!saved){applyTheme(e.matches?'dark':'light');render()}
+})}catch(e){}
+applyTheme(isDark()?'dark':'light');
+
 /* ---------- helpers ---------- */
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -230,6 +333,8 @@ const ICONS={
  arrow:'<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
  folder:'<path d="M3 6h6l2 2h10v11H3z"/>',
  play:'<path d="m7 4 13 8-13 8z"/>',
+ moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
+ sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
  gh:'<path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 0 0-1.300-3.200 4.200 4.200 0 0 0-.1-3.200s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.200 4.200 0 0 0-.1 3.200A4.600 4.600 0 0 0 4 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/>'
 };
 const ic=(n,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]||''}</svg>`;
@@ -433,7 +538,7 @@ function render(){
  root.innerHTML=side(all)+`<main><header><span>WORKSPACE <span class="slash">/</span> ${esc(viewTitle())}</span><div class="headerend"><span class="live-dot"></span> ${esc(OWNER)}<div class="avatar small">JV</div></div></header>
  <section class="page"><div class="titleline"><div><div class="eyebrow">FROM NEXT COMMIT TO RELEASE</div><h1>${esc(viewTitle())}</h1><p class="subtitle">${ui.view.startsWith('c:')?esc((CATS.find(c=>c.id===ui.view.slice(2))||{}).blurb||''):'A clear view of what’s building, what’s stuck, and what’s next.'}</p></div><button class="primary" data-act="add">${ic('plus')} Add project</button></div>
  ${stats(all)}
- <div class="sectionhead"><div><h2>${ui.view==='overview'?'Project library':esc(viewTitle())}</h2><span>${visible(all).length} of ${all.length} projects</span></div><div class="tools"><button class="iconbtn" data-act="refresh" aria-label="Refresh from GitHub" ${gh.loading?'disabled':''}>${ic('refresh',17)}</button><label class="search">${ic('search',17)}<input id="q" type="search" placeholder="Find a project…" value="${esc(ui.q)}" aria-label="Find a project"></label></div></div>
+ <div class="sectionhead"><div><h2>${ui.view==='overview'?'Project library':esc(viewTitle())}</h2><span>${visible(all).length} of ${all.length} projects</span></div><div class="tools"><button class="iconbtn" data-act="theme" aria-label="Switch to ${isDark()?'light':'dark'} mode" title="${isDark()?'Light':'Dark'} mode">${ic(isDark()?'sun':'moon',17)}</button><button class="iconbtn" data-act="refresh" aria-label="Refresh from GitHub" ${gh.loading?'disabled':''}>${ic('refresh',17)}</button><label class="search">${ic('search',17)}<input id="q" type="search" placeholder="Find a project…" value="${esc(ui.q)}" aria-label="Find a project"></label></div></div>
  <div class="ghnote ${gh.err?'warn':''}">${status}</div>
  ${ui.view==='overview'?filtersHtml(all):''}
  <div id="gridwrap">${gridHtml(all)}</div>
@@ -564,6 +669,7 @@ document.addEventListener('click',e=>{
  switch(t.dataset.act){
   case 'add':{const p=Object.assign(defaults(),{id:uid(),custom:true,name:'',cat:ui.view.startsWith('c:')?ui.view.slice(2):'lab',engine:'Browser',status:'Active',gh:null});openEditor(p);break}
   case 'refresh':fetchGh(true);break;
+  case 'theme':toggleTheme();break;
   case 'export':doExport();break;
   case 'import':$('#importfile').click();break;
   case 'unhide':store.hidden=[];if(persist()){render();toast('Hidden projects restored')}break;
