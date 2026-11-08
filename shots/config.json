@@ -1,0 +1,5 @@
+{
+  "_help": "skip = repos the bot never touches. title_only = bot takes the first screen only, never clicks or presses keys.",
+  "skip": ["password-vault", "oft-team-board"],
+  "title_only": ["selah", "GameBoard"]
+}
