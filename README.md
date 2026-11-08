@@ -21,7 +21,7 @@ Single static page. No backend, no build step: open `index.html` or serve it wit
 
 Every card shows a title-screen thumbnail; click it for the gallery (title screen + two gameplay shots).
 
-- **Automatic:** the *Capture screenshots* GitHub Action (Actions tab → Run workflow; also runs Mondays) opens each repo's live GitHub Pages build in headless Chrome, takes the title screen, clicks Start / presses Enter, then takes up to two gameplay shots. Results are committed to `shots/<repo>/{title,play1,play2}.jpg` and listed in `shots/index.json`. It is best effort: games it can't drive just keep whatever shots they have. Repos without GitHub Pages are skipped.
+- **Automatic:** the *Capture screenshots* GitHub Action (Actions tab → Run workflow; also runs Mondays) opens each repo's live GitHub Pages build in headless Chrome, takes the title screen, clicks Start / presses Enter, then takes up to two gameplay shots. Results are committed to `shots/<repo>/{title,play1,play2}.jpg` plus a small `thumb.jpg` (used by the cards so the board loads fast), and listed in `shots/index.json`. Run `python tools/capture_shots.py --thumbs-only` to rebuild thumbnails for hand-added screenshots. It is best effort: games it can't drive just keep whatever shots they have. Repos without GitHub Pages are skipped.
 - **By hand:** commit your own `title.jpg`, `play1.jpg`, `play2.jpg` into `shots/<repo>/`; the bot never overwrites files it didn't create. Or use the project's **Screenshots** tab to upload shots (kept in this browser only, and they override repo shots there).
 - `shots/config.json` controls the bot: `skip` repos are never visited (password-vault and oft-team-board by default) and `title_only` repos get just the first screen.
 

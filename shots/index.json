@@ -11,7 +11,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "Alchemy-Island": {
    "bot": [
@@ -20,7 +21,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "Bridgehold": {
    "bot": [
@@ -31,7 +33,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "Castle-of-the-Last-Warden": {
    "bot": [
@@ -40,7 +43,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "Codex-Farm-Challenge": {
    "bot": [
@@ -51,7 +55,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "DeepSRPG": {
    "bot": [
@@ -60,7 +65,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "ExMob": {
    "bot": [
@@ -69,7 +75,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "Fun-TD": {
    "bot": [
@@ -78,7 +85,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "GameBoard": {
    "bot": [
@@ -87,7 +95,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "Grim-survivor": {
    "bot": [
@@ -98,7 +107,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "Idle-Guild-Master": {
    "bot": [
@@ -107,7 +117,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "LEVEL-IRL": {
    "bot": [
@@ -120,7 +131,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "Last-light-": {
    "bot": [
@@ -133,7 +145,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "Meadowline": {
    "bot": [
@@ -146,7 +159,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "SAFE-HAVEN--JRPG": {
    "bot": [
@@ -159,7 +173,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "SafeHaven": {
    "bot": [
@@ -172,7 +187,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "Shadow-Streets": {
    "bot": [
@@ -183,7 +199,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "Starbound-Velocity": {
    "bot": [
@@ -196,7 +213,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "The-Last-Watch": {
    "bot": [
@@ -205,7 +223,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "The-Settlement-": {
    "bot": [
@@ -214,7 +233,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "The-Village": {
    "bot": [
@@ -223,7 +243,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "TheCatfather": {
    "bot": [
@@ -234,7 +255,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "TheRPG": {
    "bot": [
@@ -243,7 +265,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "Thugs-RTS": {
    "bot": [
@@ -254,7 +277,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "VEILBOUND": {
    "bot": [
@@ -265,7 +289,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "Vampires-vs-Wolves": {
    "bot": [
@@ -278,7 +303,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "backsteet-oath": {
    "bot": [
@@ -287,7 +313,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "backup-plan": {
    "bot": [
@@ -300,7 +327,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "cabin-under-siege": {
    "bot": [
@@ -313,7 +341,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "citadel-of-vesper": {
    "bot": [
@@ -324,7 +353,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "dead-air": {
    "bot": [
@@ -333,7 +363,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "deadwatch": {
    "bot": [
@@ -344,7 +375,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "ff7like": {
    "bot": [
@@ -357,7 +389,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "godot-2.5D-rpg": {
    "bot": [
@@ -370,7 +403,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "godot-metroidvania-starter": {
    "bot": [
@@ -383,7 +417,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "graveshift": {
    "bot": [
@@ -392,7 +427,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "heathens-game": {
    "bot": [
@@ -401,7 +437,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "hoard-defense": {
    "bot": [
@@ -410,7 +447,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "kingdom-of-nobodies": {
    "bot": [
@@ -423,7 +461,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "mech-junkyard-": {
    "bot": [
@@ -436,7 +475,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "neon-blood-ransom": {
    "bot": [
@@ -447,7 +487,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "nocturne-reliquary": {
    "bot": [
@@ -456,7 +497,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "picquad": {
    "bot": [
@@ -467,7 +509,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "pixelCookTest": {
    "bot": [
@@ -480,7 +523,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "rockstar-life": {
    "bot": [
@@ -489,7 +533,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "selah": {
    "bot": [
@@ -498,7 +543,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "sidewalk-kings": {
    "bot": [
@@ -509,7 +555,8 @@
    "shots": [
     "title",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "solidsnake": {
    "bot": [
@@ -518,7 +565,8 @@
    "captured": "2026-11-08",
    "shots": [
     "title"
-   ]
+   ],
+   "thumb": true
   },
   "tactics-core": {
    "bot": [
@@ -529,7 +577,8 @@
    "shots": [
     "title",
     "play1"
-   ]
+   ],
+   "thumb": true
   },
   "tiny-living-world": {
    "bot": [
@@ -542,7 +591,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "toon-quest": {
    "bot": [
@@ -555,7 +605,8 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   },
   "vesper-godot": {
    "bot": [
@@ -568,8 +619,9 @@
     "title",
     "play1",
     "play2"
-   ]
+   ],
+   "thumb": true
   }
  },
- "updated": "2026-11-08T19:34:47Z"
+ "updated": "2026-11-08T20:29:35Z"
 }

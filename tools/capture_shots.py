@@ -50,6 +50,17 @@ def differs(a: bytes, b: bytes) -> bool:
     return sum(d) / len(d) > 2.5 or max(d) > 20  # broad change, or one region changed a lot
 
 
+def make_thumb(d: Path):
+    """480x270 card thumbnail derived from title.jpg (about 15 KB instead of about 100 KB)."""
+    src = d / "title.jpg"
+    if not src.exists():
+        return False
+    im = Image.open(src).convert("RGB")
+    im.thumbnail((480, 270), Image.LANCZOS)
+    im.save(d / "thumb.jpg", "JPEG", quality=72, optimize=True, progressive=True)
+    return True
+
+
 def blank(jpg: bytes) -> bool:
     px = thumb_hash(jpg)
     return max(px) - min(px) < 8
@@ -124,6 +135,7 @@ def main():
     ap.add_argument("--only", help="comma-separated repo names")
     ap.add_argument("--repos-file", help="JSON [{name,url}] instead of querying GitHub")
     ap.add_argument("--chrome", default=os.environ.get("CHROME_PATH"))
+    ap.add_argument("--thumbs-only", action="store_true", help="only (re)build thumb.jpg files and index.json, no browsing")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(exist_ok=True)
     cfg_path = out / "config.json"
@@ -132,41 +144,50 @@ def main():
     no_interact = {s.lower() for s in cfg.get("title_only", [])}
     idx_path = out / "index.json"
     idx = json.loads(idx_path.read_text()) if idx_path.exists() else {"repos": {}}
-    repos = json.load(open(a.repos_file)) if a.repos_file else gh_repos()
-    if a.only:
-        want = {s.lower() for s in a.only.split(",")}
-        repos = [r for r in repos if r["name"].lower() in want]
-    with sync_playwright() as p:
-        browser = p.chromium.launch(executable_path=a.chrome, args=["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--autoplay-policy=no-user-gesture-required"])
-        for r in repos:
-            n = r["name"]
-            if n.lower() in skip:
-                print(f"- {n}: skipped"); continue
-            print(f"- {n}: {r['url']}")
-            got = capture(browser, r, out / n, interact=n.lower() not in no_interact)
-            if not got:
-                print("  no usable capture; keeping existing"); continue
-            d = out / n; d.mkdir(exist_ok=True)
-            ent = idx["repos"].setdefault(n, {})
-            botmade = set(ent.get("bot", []))
-            for slot, data in got.items():
-                f = d / f"{slot}.jpg"
-                # never overwrite a screenshot you committed by hand: only replace files this bot wrote
-                if f.exists() and slot not in botmade:
-                    continue
-                f.write_bytes(data)
-                botmade.add(slot)
-            ent["bot"] = sorted(botmade)
-            have = [s for s in ("title", "play1", "play2") if (d / f"{s}.jpg").exists()]
-            ent["shots"] = have
-            ent["captured"] = datetime.date.today().isoformat()
-            print(f"  saved {have}")
-        browser.close()
-    # pick up hand-added files for any repo folder
+    refreshed = set()
+    repos = []
+    if not a.thumbs_only:
+        repos = json.load(open(a.repos_file)) if a.repos_file else gh_repos()
+        if a.only:
+            want = {s.lower() for s in a.only.split(",")}
+            repos = [r for r in repos if r["name"].lower() in want]
+    if repos:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=a.chrome, args=["--no-sandbox", "--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--autoplay-policy=no-user-gesture-required"])
+            for r in repos:
+                n = r["name"]
+                if n.lower() in skip:
+                    print(f"- {n}: skipped"); continue
+                print(f"- {n}: {r['url']}")
+                got = capture(browser, r, out / n, interact=n.lower() not in no_interact)
+                if not got:
+                    print("  no usable capture; keeping existing"); continue
+                d = out / n; d.mkdir(exist_ok=True)
+                ent = idx["repos"].setdefault(n, {})
+                botmade = set(ent.get("bot", []))
+                for slot, data in got.items():
+                    f = d / f"{slot}.jpg"
+                    # never overwrite a screenshot you committed by hand: only replace files this bot wrote
+                    if f.exists() and slot not in botmade:
+                        continue
+                    f.write_bytes(data)
+                    botmade.add(slot)
+                    if slot == "title":
+                        refreshed.add(n)
+                ent["bot"] = sorted(botmade)
+                ent["captured"] = datetime.date.today().isoformat()
+                print(f"  saved {sorted(got)}")
+            browser.close()
+    # thumbnails, plus pick up any hand-added files for every repo folder
     for d in sorted(p for p in out.iterdir() if p.is_dir()):
         have = [s for s in ("title", "play1", "play2") if (d / f"{s}.jpg").exists()]
-        if have:
-            idx["repos"].setdefault(d.name, {})["shots"] = have
+        if not have:
+            continue
+        ent = idx["repos"].setdefault(d.name, {})
+        ent["shots"] = have
+        if (d / "title.jpg").exists() and (d.name in refreshed or not (d / "thumb.jpg").exists()):
+            make_thumb(d)
+        ent["thumb"] = (d / "thumb.jpg").exists()
     idx["updated"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     idx_path.write_text(json.dumps(idx, indent=1, sort_keys=True))
 

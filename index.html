@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <script>try{var t=localStorage.getItem("gameboard.theme");if(!t&&matchMedia("(prefers-color-scheme:dark)").matches)t="dark";if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="theme-color" content="#f7f8f5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700&display=swap">
 <title>Gameboard · OuterHeavenX project board</title>
 <meta name="description" content="Every OuterHeavenX game and app, sorted by category, with live GitHub status.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
@@ -14,7 +17,6 @@
 <meta name="apple-mobile-web-app-title" content="Gameboard">
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap');
 /* Gameboard styles. Rules and tokens: DESIGN.md. Sizes: 10/11/12/14/19/34. Spacing: multiples of 4. Radius: 6, 8, 999. */
 :root{
  --bg:#f7f8f5;--surface:#fff;--border:#e0e6da;--border-h:#b9c6b0;
@@ -106,7 +108,7 @@ h1{font-size:34px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
 .blurb+.grid{margin-top:0}
 
 /* card */
-.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s ease-out,box-shadow .2s ease-out}
+.card{content-visibility:auto;contain-intrinsic-size:auto 440px;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:border-color .2s ease-out,box-shadow .2s ease-out}
 .card:hover{border-color:var(--border-h);box-shadow:var(--shadow)}
 .thumb{display:block;position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--hl);border-bottom:1px solid var(--border)}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
@@ -385,7 +387,7 @@ const uid=()=>(crypto.randomUUID?crypto.randomUUID():'c'+Date.now().toString(36)
 const today=()=>new Date().toISOString().slice(0,10);
 const clone=o=>JSON.parse(JSON.stringify(o));
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-function ago(iso){if(!iso)return '';const d=(Date.now()-new Date(iso))/864e5;if(d<1){const h=Math.floor(d*24);return h<1?'just now':h+'h ago'}if(d<30)return Math.floor(d)+'d ago';if(d<365)return Math.floor(d/30)+'mo ago';return Math.floor(d/365)+'y ago'}
+function ago(iso){if(!iso||isNaN(new Date(iso)))return '';const d=(Date.now()-new Date(iso))/864e5;if(d<1){const h=Math.floor(d*24);return h<1?'just now':h+'h ago'}if(d<30)return Math.floor(d)+'d ago';if(d<365)return Math.floor(d/30)+'mo ago';return Math.floor(d/365)+'y ago'}
 function pretty(n){return n.replace(/[-_]+$/,'').replace(/[-_]+/g,' ').replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\b\w/g,c=>c.toUpperCase())}
 
 const ICONS={
@@ -429,16 +431,17 @@ const idb={db:null,
  async put(k,v){const db=await this.open();return new Promise((res,rej)=>{const t=db.transaction('s','readwrite');t.objectStore('s').put(v,k);t.oncomplete=()=>res();t.onerror=()=>rej(t.error)})},
  async del(k){const db=await this.open();return new Promise((res,rej)=>{const t=db.transaction('s','readwrite');t.objectStore('s').delete(k);t.oncomplete=()=>res();t.onerror=()=>rej(t.error)})}};
 async function loadShots(){
- try{if(location.protocol==='file:')throw 0;const r=await fetch('shots/index.json',{cache:'no-cache'});if(r.ok){const d=await r.json();shotsIdx={};for(const[k,v]of Object.entries(d.repos||{}))shotsIdx[k.toLowerCase()]=v.shots||[]}}catch(e){}
+ try{if(location.protocol==='file:')throw 0;const r=await fetch('shots/index.json',{cache:'no-cache'});if(r.ok){const d=await r.json();shotsIdx={};for(const[k,v]of Object.entries(d.repos||{}))shotsIdx[k.toLowerCase()]={shots:v.shots||[],thumb:!!v.thumb,v:v.captured||''}}}catch(e){}
  try{const all=await idb.all();for(const[k,blob]of Object.entries(all))localShots[k]=URL.createObjectURL(blob)}catch(e){}
- render();
+ invalidate();render();
 }
 function shotsFor(p){
- const out=[];
+ const out=[],ix=!p.custom&&p.repoName?shotsIdx[p.id]:null;
+ const base=ix?`shots/${encodeURIComponent(p.repoName)}/`:'',q=ix&&ix.v?'?v='+encodeURIComponent(ix.v):'';
  for(const[slot,label]of SLOTS){
-  const loc=localShots[p.id+'|'+slot];
-  const repo=!p.custom&&p.repoName&&(shotsIdx[p.id]||[]).includes(slot)?`shots/${encodeURIComponent(p.repoName)}/${slot}.jpg`:'';
-  if(loc||repo)out.push({slot,label,url:loc||repo,local:!!loc});
+  const loc=localShots[p.id+'|'+slot],repo=ix&&ix.shots.includes(slot);
+  if(!loc&&!repo)continue;
+  out.push({slot,label,url:loc||base+slot+'.jpg'+q,thumb:!loc&&slot==='title'&&ix.thumb?base+'thumb.jpg'+q:'',local:!!loc});
  }
  return out;
 }
@@ -468,8 +471,10 @@ function openLightbox(id,i){
  const sh=shotsFor(p);if(!sh.length)return;
  lb={id,i:Math.max(0,Math.min(i||0,sh.length-1)),sh,name:p.name,prev:document.activeElement};renderLightbox();
 }
+function syncInert(){const a=$('#app'),e=$('#editor');if(a)a.inert=!!(edit||lb);if(e)e.inert=!!lb}
 function renderLightbox(){
  const root=$('#lightbox');
+ syncInert();
  if(!lb){root.innerHTML='';return}
  const s=lb.sh[lb.i];
  root.innerHTML=`<div class="lb" data-lbclose role="dialog" aria-modal="true" aria-label="${esc(lb.name)} screenshots"><div class="lbin">
@@ -482,11 +487,12 @@ function closeLightbox(){const p=lb&&lb.prev;lb=null;renderLightbox();if(p&&p.fo
 
 /* ---------- storage ---------- */
 function loadStore(){
- try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object')return{over:s.over||{},custom:s.custom||[],hidden:s.hidden||[]}}catch(e){}
+ try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object')return cleanStore(s)}catch(e){}
  return{over:{},custom:[],hidden:[]};
 }
 let store=loadStore();
 function persist(){
+ invalidate();
  try{localStorage.setItem(KEY,JSON.stringify(store));return true}
  catch(e){toast('Could not save in this browser (storage is blocked or full). Use Backup › Export so you do not lose edits.',true);return false}
 }
@@ -509,7 +515,7 @@ async function fetchGh(force){
  }catch(e){
   gh.err=(e&&e.message&&!/Failed to fetch|NetworkError|Load failed/i.test(e.message))?e.message:'Could not reach GitHub.';
   if(gh.repos.length)gh.err+=' Showing the last saved copy'+(gh.t?' ('+ago(new Date(gh.t).toISOString())+')':'')+'.';
- }finally{gh.loading=false;render()}
+ }finally{gh.loading=false;invalidate();render()}
 }
 
 /* ---------- project model ---------- */
@@ -539,19 +545,38 @@ function bases(){
  }
  return out.filter(x=>!store.hidden.includes(x.base.id));
 }
+const str=(v,d='')=>typeof v==='string'?v:v==null?d:String(v);
+function fix(p){
+ for(const k of ['name','engine','version','repo','live','itch','build','bugs','done','pending','blocker','status'])p[k]=str(p[k]);
+ if(!CATS.some(c=>c.id===p.cat))p.cat='lab';
+ if(p.status&&!STAGES.includes(p.status))p.status='';
+ p.targets=Array.isArray(p.targets)?p.targets.filter(t=>TARGETS.includes(t)):['Browser'];
+ p.priorities=[0,1,2].map(i=>str(Array.isArray(p.priorities)?p.priorities[i]:''));
+ p.qa=qaDefaults().map((d,i)=>{const q=Array.isArray(p.qa)&&p.qa[i]&&typeof p.qa[i]==='object'?p.qa[i]:{};return Object.assign(d,{status:str(q.status,d.status),date:str(q.date),device:str(q.device,d.device),notes:str(q.notes)})});
+ p.logs=Array.isArray(p.logs)?p.logs.filter(l=>l&&typeof l==='object').map(l=>({title:str(l.title),type:str(l.type,'Commit'),url:str(l.url),date:str(l.date)})):[];
+ p.confirmed=!!p.confirmed;
+ return p;
+}
+function cleanStore(s){
+ const over={};if(s&&s.over&&typeof s.over==='object')for(const[k,v]of Object.entries(s.over))if(v&&typeof v==='object'&&!Array.isArray(v))over[k]=v;
+ return{over,custom:Array.isArray(s&&s.custom)?s.custom.filter(c=>c&&typeof c==='object'&&typeof c.id==='string'):[],hidden:Array.isArray(s&&s.hidden)?s.hidden.filter(x=>typeof x==='string'):[]};
+}
 function build(base,g,useOver){
  const o=useOver?(store.over[base.id]||{}):{};
- const p=Object.assign(defaults(),base,o);
+ const p=fix(Object.assign(defaults(),base,o));
  p.gh=g||null;
  if(!p.engine&&g&&g.language)p.engine=g.language;
  if(!p.status)p.status=g&&g.pushed_at&&(Date.now()-new Date(g.pushed_at))/864e5>30?'Paused':'Active';
  if(p.confirmed)p.guess=false;
  return p;
 }
+let _all=null;
+const invalidate=()=>{_all=null};
 function allProjects(){
+ if(_all)return _all;
  const list=bases().map(({base,g})=>build(base,g,true));
- for(const c of store.custom)list.push(Object.assign(defaults(),c,{custom:true,gh:null,status:c.status||'Active'}));
- return list;
+ for(const c of store.custom)list.push(fix(Object.assign(defaults(),c,{custom:true,gh:null,status:c.status||'Active'})));
+ return _all=list;
 }
 const liveUrl=p=>safeUrl(p.live)||(p.gh&&safeUrl(p.gh.homepage))||(p.gh&&p.gh.has_pages&&!p.custom?`https://${OWNER.toLowerCase()}.github.io/${p.repoName}/`:'');
 const needsReview=p=>!p.custom&&p.guess;
@@ -561,16 +586,20 @@ const ready=p=>!lines(p.bugs).length&&!!p.version.trim()&&applicable(p).every(q=
 
 /* ---------- UI state ---------- */
 const ui={view:'overview',q:'',filter:'all'};
-let edit=null,editOrig='',editTab='Details',lastFocus=null,toastT=null;
+let qT=0,edit=null,editOrig='',editTab='Details',lastFocus=null,toastT=null;
+const safeDecode=x=>{try{return decodeURIComponent(x)}catch(e){return ''}};
 function parseHash(){
  const h=location.hash.replace(/^#\/?/,'');
  if(!h)ui.view='overview';
  else if(h==='activity')ui.view='activity';
- else if(/^c\/[\w-]+$/.test(h))ui.view='c:'+h.slice(2);
- else if(/^s\/.+$/.test(h))ui.view='s:'+decodeURIComponent(h.slice(2));
+ else if(/^c\/[\w-]+$/.test(h)&&CATS.some(c=>c.id===h.slice(2)))ui.view='c:'+h.slice(2);
+ else if(/^s\/.+$/.test(h)&&STAGES.includes(safeDecode(h.slice(2))))ui.view='s:'+safeDecode(h.slice(2));
  else ui.view='overview';
 }
-const go=v=>{location.hash=v==='overview'?'#/':v==='activity'?'#/activity':v.startsWith('c:')?'#/c/'+v.slice(2):'#/s/'+encodeURIComponent(v.slice(2))};
+function go(v){
+ const h=v==='overview'?'#/':v==='activity'?'#/activity':v.startsWith('c:')?'#/c/'+v.slice(2):'#/s/'+encodeURIComponent(v.slice(2));
+ if(location.hash===h||(h==='#/'&&(location.hash===''||location.hash==='#'))){render();window.scrollTo(0,0)}else location.hash=h;
+}
 function viewTitle(){
  if(ui.view==='overview')return 'Projects';
  if(ui.view==='activity')return 'Recent activity';
@@ -622,7 +651,7 @@ function card(p){
  const extra=needsReview(p)?'<span class="badge review" title="Category guessed from the repo name. Open the project and Save to confirm.">Check category</span>':p.isNew?'<span class="badge new">New repo</span>':'';
  const sh=shotsFor(p);
  const thumb=sh.length
-  ?`<button class="thumb" data-gallery="${esc(p.id)}" aria-label="View ${sh.length} screenshot${sh.length>1?'s':''} of ${esc(p.name)}"><img src="${esc(sh[0].url)}" alt="" loading="lazy"><span class="shotcount">${ic('img',12)}${sh.length}</span></button>`
+  ?`<button class="thumb" data-gallery="${esc(p.id)}" aria-label="View ${sh.length} screenshot${sh.length>1?'s':''} of ${esc(p.name)}"><img src="${esc(sh[0].thumb||sh[0].url)}" alt="" width="480" height="270" loading="lazy" decoding="async"><span class="shotcount">${ic('img',12)}${sh.length}</span></button>`
   :`<button class="thumb empty" data-shots-open="${esc(p.id)}" aria-label="Add screenshots for ${esc(p.name)}">${ic('img',20)}<span>No screenshots yet</span></button>`;
  return `<article class="card">${thumb}
   <button class="cardmain" data-open="${esc(p.id)}" aria-label="Open ${esc(p.name)}">
@@ -651,8 +680,7 @@ function filtersHtml(all){
  if(reviewN)chips.push(['review','Check category ('+reviewN+')']);
  return `<div class="filters" role="group" aria-label="Filter by stage">${chips.map(([k,l])=>`<button data-filter="${esc(k)}" class="${ui.filter===k?'on':''}" aria-pressed="${ui.filter===k}">${esc(l)}</button>`).join('')}</div>`;
 }
-function gridHtml(all){
- const list=visible(all);
+function gridHtml(all,list){
  if(ui.view==='activity')return activityHtml(all,list);
  if(!list.length)return `<div class="empty"><h3>${all.length?'No matching projects':'Loading your repositories…'}</h3><p>${all.length?'Adjust your search or filter.':'Loading the list from GitHub.'}</p></div>`;
  if(ui.view==='overview'){
@@ -681,7 +709,7 @@ function subtitle(all){
  return 'Projects at this stage.';
 }
 function render(){
- const all=allProjects();
+ const all=allProjects(),vis=visible(all);
  const root=$('#app');
  const hadQ=document.activeElement&&document.activeElement.id==='q';
  const status=gh.loading?'Syncing with GitHub…':gh.err?esc(gh.err):gh.t?`Synced with GitHub ${esc(ago(new Date(gh.t).toISOString()))} · public repos only`:'';
@@ -693,14 +721,14 @@ function render(){
  <button class="primary" data-act="add">${ic('plus',16)}Add project</button></div></header>
  <section class="page"><h1>${esc(viewTitle())}</h1><p class="subtitle">${esc(subtitle(all))}</p>
  ${ui.view==='overview'?stats(all)+filtersHtml(all):'<div style="height:24px"></div>'}
- <div class="resultline"><span id="rc">${visible(all).length} of ${all.length} projects</span><span class="ghnote ${gh.err?'warn':''}">${status}</span></div>
- <div id="gridwrap">${gridHtml(all)}</div>
+ <div class="resultline"><span id="rc">${vis.length} of ${all.length} projects</span><span class="ghnote ${gh.err?'warn':''}">${status}</span></div>
+ <div id="gridwrap">${gridHtml(all,vis)}</div>
  <footer><span>Edits are saved in this browser.</span><span><button class="linkish" data-act="export">Export</button> · <button class="linkish" data-act="import">Import</button></span></footer></section></main>`;
  if(hadQ){const q=$('#q');if(q){q.focus();const n=q.value.length;try{q.setSelectionRange(n,n)}catch(e){}}}
 }
 function renderGridOnly(){
- const all=allProjects();$('#gridwrap').innerHTML=gridHtml(all);
- const sub=$('#rc');if(sub)sub.textContent=`${visible(all).length} of ${all.length} projects`;
+ const all=allProjects(),vis=visible(all);$('#gridwrap').innerHTML=gridHtml(all,vis);
+ const sub=$('#rc');if(sub)sub.textContent=`${vis.length} of ${all.length} projects`;
 }
 
 /* ---------- editor ---------- */
@@ -708,7 +736,7 @@ function openEditor(p){
  lastFocus=document.activeElement;
  edit=clone(Object.assign({},p,{gh:null}));edit.gh=p.gh;
  editOrig=JSON.stringify(strip(edit));editTab='Details';
- renderEditor();
+ renderEditor();syncInert();
  const d=$('#editor .editor');if(d)d.focus();
 }
 const strip=p=>{const o={};for(const k of FIELDS.concat(['id']))o[k]=p[k];return o};
@@ -716,7 +744,7 @@ const dirty=()=>edit&&JSON.stringify(strip(edit))!==editOrig;
 function closeEditor(force){
  if(!edit)return;
  if(!force&&dirty()&&!confirm('Close without saving your edits?'))return;
- edit=null;$('#editor').innerHTML='';
+ edit=null;$('#editor').innerHTML='';syncInert();
  if(lastFocus&&lastFocus.focus&&document.contains(lastFocus))lastFocus.focus();
 }
 function linkField(k,label,ph){const v=edit[k]||'';return `<label>${esc(label)}<div class="linkinput"><input type="url" data-f="${k}" placeholder="${esc(ph||'https://…')}" value="${esc(v)}">${safeUrl(v)?`<a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}">${ic('ext',17)}</a>`:''}</div></label>`}
@@ -739,7 +767,7 @@ function editorBody(){
  }
  if(editTab==='Screenshots'){
   const sh=Object.fromEntries(shotsFor(e).map(x=>[x.slot,x]));
-  return `<p class="help">Title screen plus a couple of gameplay shots. Shots from the GitHub Action (or committed to <code>shots/${esc(e.repoName||'your-repo')}/</code>) show automatically; an upload here replaces them in this browser only.</p><div class="slots">${SLOTS.map(([slot,label])=>{const s=sh[slot];return `<div class="slot"><div class="pic">${s?`<button type="button" data-lbopen="${slot}" aria-label="Enlarge ${label}"><img src="${esc(s.url)}" alt="${label}" loading="lazy"></button>`:`<span>${ic('img',24)}<small>None yet</small></span>`}</div><div class="slotbar"><b>${label}</b>${s&&s.local?'<em>this browser</em>':s?'<em>from repo</em>':''}</div><div class="btnrow"><label class="secondary slotbtn">${ic('upl',14)} ${s?'Replace':'Upload'}<input type="file" accept="image/*" data-slotfile="${slot}"></label>${s&&s.local?`<button type="button" class="secondary slotbtn" data-slotclear="${slot}">${ic('trash',14)} Remove</button>`:''}</div></div>`}).join('')}</div>`;
+  return `<p class="help">Title screen plus a couple of gameplay shots. Shots from the GitHub Action (or committed to <code>shots/${esc(e.repoName||'your-repo')}/</code>) show automatically; an upload here replaces them in this browser only.</p><div class="slots">${SLOTS.map(([slot,label])=>{const s=sh[slot];return `<div class="slot"><div class="pic">${s?`<button type="button" data-lbopen="${slot}" aria-label="Enlarge ${label}"><img src="${esc(s.url)}" alt="${label}" loading="lazy" decoding="async"></button>`:`<span>${ic('img',24)}<small>None yet</small></span>`}</div><div class="slotbar"><b>${label}</b>${s&&s.local?'<em>this browser</em>':s?'<em>from repo</em>':''}</div><div class="btnrow"><label class="secondary slotbtn">${ic('upl',14)} ${s?'Replace':'Upload'}<input type="file" accept="image/*" data-slotfile="${slot}"></label>${s&&s.local?`<button type="button" class="secondary slotbtn" data-slotclear="${slot}">${ic('trash',14)} Remove</button>`:''}</div></div>`}).join('')}</div>`;
  }
  if(editTab==='Features & bugs'){
   return `<p class="help">One item per line. Move completed work into Completed features as you go.</p>`+[['bugs','Open bugs','Describe the issue and steps to reproduce'],['pending','Pending features','What still needs to be built?'],['done','Completed features','What is already working?']].map(([k,l,ph])=>`<label>${l} <span class="badge" id="cnt-${k}">${lines(e[k]).length}</span><textarea rows="6" data-f="${k}" data-count="${k}" placeholder="${ph}">${esc(e[k])}</textarea></label>`).join('');
@@ -760,15 +788,23 @@ function editorBody(){
  <button type="button" class="secondary" data-act="addlog">${ic('plus',16)}Add entry to project</button></div>`+
  e.logs.map((l,i)=>`<div class="historyrow">${ic('git',20)}<div><strong>${esc(l.title)}</strong><small>${esc(l.type)} · ${esc(l.date)}</small></div>${safeUrl(l.url)?`<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open changelog link">${ic('up',18)}</a>`:''}<button type="button" class="iconbtn" aria-label="Remove changelog entry" data-rmlog="${i}">${ic('x',16)}</button></div>`).join('');
 }
+function focusSel(el){
+ if(!el||!el.dataset||!el.closest('#editor'))return null;
+ for(const k of ['f','tab','tg','qa','pr','slotfile','slotclear','lbopen'])if(el.dataset[k]!==undefined)return `[data-${k}="${el.dataset[k].replace(/"/g,'\\"')}"]`;
+ return el.id?'#'+el.id:null;
+}
 function renderEditor(){
  const e=edit;if(!e)return;
+ const fs=focusSel(document.activeElement);
  $('#editor').innerHTML=`<div class="overlay" data-overlay><section class="editor" role="dialog" aria-modal="true" aria-label="Project editor" tabindex="-1">
  <div class="edithead"><div><small>${esc(catName(e.cat))}</small><h2>${esc(e.name||'New project')}</h2></div><button class="iconbtn" aria-label="Close editor" data-act="closeedit">${ic('x',20)}</button></div>
  <div class="edittabs" role="tablist">${['Details','Screenshots','Features & bugs','QA checklist','Changelog'].map(t=>`<button type="button" role="tab" aria-selected="${editTab===t}" data-tab="${esc(t)}" class="${editTab===t?'on':''}">${t}</button>`).join('')}</div>
  <form id="editform"><div class="editbody" id="editbody">${editorBody()}</div>
  <div class="editfoot">${e.custom?`<button type="button" class="danger iconbtn" aria-label="Delete project" data-act="delete">${ic('trash',18)}</button>`:`<button type="button" class="danger iconbtn txt" data-act="hide" title="Remove from this board (restorable)">${ic('trash',16)}Hide</button>`}
  <small>Changes save when you tap Save project.</small><button type="submit" class="primary" id="savebtn" ${e.name.trim()?'':'disabled'}>Save project${ic('check',17)}</button></div></form></section></div>`;
- const d=$('#editor .editor');if(d&&!d.contains(document.activeElement))d.focus();
+ const back=fs&&$('#editor '+fs);
+ if(back)back.focus();
+ else{const d=$('#editor .editor');if(d&&!d.contains(document.activeElement))d.focus()}
 }
 function saveEdit(){
  const p=edit;if(!p.name.trim())return;
@@ -804,7 +840,7 @@ function doImport(file){
    const d=JSON.parse(fr.result);
    if(!d||d.app!=='gameboard'||typeof d.over!=='object'||!Array.isArray(d.custom)||!Array.isArray(d.hidden))throw 0;
    if(!confirm('Replace the edits saved in this browser with the contents of this backup?'))return;
-   store={over:d.over,custom:d.custom,hidden:d.hidden};
+   store=cleanStore(d);
    if(persist()){render();toast('Backup restored')}
   }catch(e){toast('That file is not a Gameboard backup.',true)}
  };
@@ -841,7 +877,7 @@ document.addEventListener('click',e=>{
   case 'import':$('#importfile').click();break;
   case 'unhide':store.hidden=[];if(persist()){render();toast('Hidden projects restored')}break;
   case 'closeedit':closeEditor();break;
-  case 'addlog':{const title=$('#lg-title').value.trim(),date=$('#lg-date').value;if(!title||!date)return;
+  case 'addlog':{const title=$('#lg-title').value.trim(),date=$('#lg-date').value;if(!title||!date){toast('Add a title and a date first.',true);return}
     edit.logs.unshift({title,type:$('#lg-type').value,url:$('#lg-url').value.trim(),date});renderEditor();break}
   case 'delete':if(confirm('Permanently delete this project and its tracking notes?')){store.custom=store.custom.filter(c=>c.id!==edit.id);if(persist()){closeEditor(true);render();toast('Project deleted')}}break;
   case 'hide':if(confirm('Hide this project from the board? Your GitHub repo is untouched, and you can restore it from the sidebar.')){const id=edit.id;store.hidden.push(id);delete store.over[id];if(persist()){closeEditor(true);render();toast('Project hidden')}}break;
@@ -849,7 +885,7 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('input',e=>{
  const t=e.target;
- if(t.id==='q'){ui.q=t.value;renderGridOnly();return}
+ if(t.id==='q'){ui.q=t.value;clearTimeout(qT);qT=setTimeout(renderGridOnly,100);return}
  if(!edit)return;
  if(t.dataset.f){edit[t.dataset.f]=t.value;
   if(t.dataset.f==='name'){const b=$('#savebtn');if(b)b.disabled=!t.value.trim();const h=$('#editor h2');if(h)h.textContent=t.value||'New project'}
