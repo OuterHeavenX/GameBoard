@@ -1,4 +1,575 @@
 {
- "repos": {},
- "updated": null
+ "repos": {
+  "100-Floors": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "Alchemy-Island": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "Bridgehold": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "Castle-of-the-Last-Warden": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "Codex-Farm-Challenge": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "DeepSRPG": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "ExMob": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "Fun-TD": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "GameBoard": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "Grim-survivor": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "Idle-Guild-Master": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "LEVEL-IRL": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "Last-light-": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "Meadowline": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "SAFE-HAVEN--JRPG": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "SafeHaven": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "Shadow-Streets": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "Starbound-Velocity": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "The-Last-Watch": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "The-Settlement-": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "The-Village": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "TheCatfather": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "TheRPG": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "Thugs-RTS": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "VEILBOUND": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "Vampires-vs-Wolves": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "backsteet-oath": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "backup-plan": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "cabin-under-siege": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "citadel-of-vesper": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "dead-air": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "deadwatch": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "ff7like": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "godot-2.5D-rpg": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "godot-metroidvania-starter": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "graveshift": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "heathens-game": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "hoard-defense": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "kingdom-of-nobodies": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "mech-junkyard-": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "neon-blood-ransom": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "nocturne-reliquary": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "picquad": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "pixelCookTest": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "rockstar-life": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "selah": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "sidewalk-kings": {
+   "bot": [
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play2"
+   ]
+  },
+  "solidsnake": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title"
+   ]
+  },
+  "tactics-core": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1"
+   ]
+  },
+  "tiny-living-world": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "toon-quest": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  },
+  "vesper-godot": {
+   "bot": [
+    "play1",
+    "play2",
+    "title"
+   ],
+   "captured": "2026-11-08",
+   "shots": [
+    "title",
+    "play1",
+    "play2"
+   ]
+  }
+ },
+ "updated": "2026-11-08T19:34:47Z"
 }
