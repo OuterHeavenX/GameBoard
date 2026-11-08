@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gameboard · OuterHeavenX project board</title>
+<meta name="description" content="Every OuterHeavenX game and app, sorted by category, with live GitHub status.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23264c3b'/%3E%3Ctext x='16' y='24' font-size='22' text-anchor='middle' fill='%23d6eab8'%3E%E2%96%A6%3C/text%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#f7f8f5;color:#24352e;font-family:'DM Sans',sans-serif;font-size:14px}button,input,textarea,select{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait;opacity:.55}button,a{touch-action:manipulation}button{color:inherit}a{color:inherit}button:focus-visible,a:focus-visible{outline:3px solid #6d9477;outline-offset:3px}input:focus,textarea:focus,select:focus{outline:2px solid #7f9b82;outline-offset:1px}button{border:0;background:none}aside{position:fixed;left:0;top:0;bottom:0;width:238px;background:#eff2eb;border-right:1px solid #e1e5dc;padding:32px 22px;display:flex;flex-direction:column}.brand{font-family:Manrope,sans-serif;font-weight:800;font-size:26px;letter-spacing:-1.4px;text-decoration:none;display:flex;align-items:center;gap:9px}.branddot{color:#71945d;margin-left:-8px}.brandmark{display:grid;place-items:center;background:#264c3b;color:#d6eab8;width:33px;height:33px;border-radius:9px;font-size:30px;line-height:1}.workspace{display:flex;gap:10px;align-items:center;margin:38px 0 30px;font-weight:600;font-size:12px}.avatar{width:34px;height:34px;border-radius:50%;background:#e0e6d6;display:grid;place-items:center;color:#4d6452;font-size:11px;font-weight:700;flex-shrink:0}.avatar.small{width:29px;height:29px}.workspace small{display:block;font-size:10px;color:#859083;margin-top:4px;font-weight:400}.navlabel{font-size:9px;letter-spacing:1.4px;color:#8b9488;margin:0 12px 12px}nav{display:grid;gap:6px}nav button{height:44px;border-radius:7px;display:flex;align-items:center;gap:12px;padding:0 13px;text-align:left;font-size:12px;color:#6e7c70}nav button.selected{background:#dfe7d7;color:#294d37;font-weight:650}nav button b{margin-left:auto;background:#ebd7ba;border-radius:4px;padding:2px 5px;font-size:9px}.sidebottom{margin-top:auto;padding:22px 10px 0;font-size:11px;color:#60705e}.sidebottom strong{display:block;color:#42563e;font-size:12px;margin-top:12px}.sidebottom p{font-size:11px;line-height:1.8;color:#889181;margin:9px 0 30px}.smallmark{color:#789267}.cloud-dot,.live-dot{display:inline-block;width:6px;height:6px;background:#719c70;border-radius:50%;margin-right:6px}main{margin-left:238px}header{height:77px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e5e8e0;padding:0 42px;color:#6d776b;font-size:10px}header>span{letter-spacing:.7px}.slash{margin:0 12px;color:#afb5aa}.headerend{display:flex;align-items:center;gap:8px}.headerend .avatar{margin-left:16px}.page{max-width:1440px;margin:auto;padding:42px}.titleline{display:flex;align-items:center;justify-content:space-between;gap:20px}.eyebrow{font-size:9px;letter-spacing:1.5px;color:#7d8b73;font-weight:600}h1,h2,h3{font-family:Manrope,sans-serif}h1{font-size:32px;line-height:1.25;letter-spacing:-1.3px;font-weight:750;margin:12px 0}p.subtitle{color:#869080;font-size:12px;margin-bottom:0}.primary{background:#294e3d;color:#fff;border:1px solid #294e3d;border-radius:7px;min-height:43px;padding:0 16px;display:inline-flex;gap:9px;align-items:center;justify-content:center;font-size:12px;font-weight:550;white-space:nowrap}.primary:hover{background:#3b634b}.secondary{background:#e9eee3;border-radius:6px;min-height:40px;padding:0 14px;display:inline-flex;align-items:center;gap:8px;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0 38px}.stats>button{background:#fff;border:1px solid #e1e6dc;border-radius:10px;padding:22px;text-align:left}.stats span{display:flex;justify-content:space-between;align-items:center;color:#76816e;font-size:11px}.stats span svg{color:#92a088}.stats strong{display:flex;align-items:center;gap:13px;font-family:Manrope,sans-serif;font-size:34px;font-weight:650;letter-spacing:-1.5px;margin:10px 0}.stats small{color:#959d8e;font-size:10px}.amberdot{width:7px;height:7px;border-radius:50%;background:#d8ae65}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:14px}.sectionhead h2{margin:0 0 7px;font-size:19px;letter-spacing:-.5px}.sectionhead>div>span{color:#929b89;font-size:11px}.tools{display:flex;gap:10px;align-items:center}.search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #e0e5d9;border-radius:6px;padding:0 12px;color:#939e8d;height:38px}.search input{border:0;outline:0;width:160px;background:transparent;font-size:11px;color:#344d3b}.filters{display:flex;gap:8px;margin:23px 0}.filters button{padding:8px 12px;border-radius:5px;font-size:11px;color:#85917d}.filters .on{background:#e7ecdf;color:#49623e;font-weight:600}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:23px}.card{display:block;width:100%;text-align:left;background:#fff;border:1px solid #e0e6da;border-radius:11px;padding:22px;transition:transform .15s,box-shadow .15s}.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px #2e44250c;border-color:#b9c9af}.cardtop{display:flex;align-items:center;gap:8px}.gameicon{width:39px;height:39px;border-radius:10px;background:#edf1e1;color:#748956;display:grid;place-items:center}.color1{background:#f3e9dd;color:#a6824f}.color2{background:#e6ecee;color:#688692}.color3{background:#ece7f1;color:#897697}.badge{display:inline-flex;align-items:center;font-size:9px;padding:5px 7px;border-radius:4px;background:#edf0e8;color:#738069;line-height:1.3;font-weight:500}.cardtop .badge{margin-left:auto;max-width:130px}.blue{background:#edf2ed;color:#688574}.amber{background:#fcf0d9;color:#a27a30}.green{background:#e9f2df;color:#648044}.cardarrow{color:#a6afa0;margin-left:4px;flex-shrink:0}.card h3{font-size:16px;line-height:1.4;font-weight:750;letter-spacing:-.45px;margin:20px 0 7px;overflow-wrap:anywhere}.meta{font-size:10px;color:#8c9784}.meta span{margin:0 6px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:15px}.tags span{font-size:9px;border:1px solid #e6eadf;border-radius:4px;padding:4px 7px;color:#7d8c72}.carddivider{height:1px;background:#edf0e8;margin:19px 0 16px}.nextlabel{font-size:8px;letter-spacing:1px;color:#97a18c;display:flex;justify-content:space-between}.nexttext{font-size:11px;line-height:1.65;min-height:37px;color:#5c7052;overflow-wrap:anywhere;margin:8px 0 20px}.cardfoot{display:flex;justify-content:space-between;gap:6px;color:#909b86;font-size:9px}.cardfoot span{display:flex;align-items:center;gap:5px}.qa-note{display:flex;align-items:center;gap:16px;background:#eef2e7;border:1px solid #e1e7d8;border-radius:9px;padding:21px;margin-top:30px}.noteicon{color:#82976f}.qa-note strong{font-size:11px;font-weight:600}.qa-note p{font-size:10px;line-height:1.7;color:#8b977f;margin:6px 0 0}.qa-note .badge{margin-left:auto;font-size:8px;letter-spacing:.7px;white-space:nowrap;border:1px solid #dae3ce;background:none;color:#8a9b76}footer{display:flex;justify-content:space-between;gap:12px;font-size:8px;color:#a2aa99;margin-top:32px;letter-spacing:.7px}.welcome{grid-column:1/-1;text-align:center;padding:48px 25px;background:white;border:1px dashed #cbd5c2;border-radius:11px}.welcomeicon{margin:auto auto 20px;border-radius:14px;background:#eef2e7;color:#789367;display:grid;place-items:center;width:60px;height:60px}.welcome h3{font-size:21px;margin:14px}.welcome p{max-width:490px;line-height:1.8;margin:0 auto 22px;color:#87917e;font-size:12px}.textbtn{display:block;margin:14px auto 0;color:#718067;font-size:11px}.empty{grid-column:1/-1;text-align:center;padding:55px 20px;color:#85917c;line-height:1.8}.empty svg{margin:auto}.empty h3{color:#455c3f}.error,.warning{background:#fff1db;border:1px solid #eed7b4;color:#8c6431;padding:13px;border-radius:7px;margin-bottom:16px;font-size:12px;line-height:1.7}.error button{text-decoration:underline}.error{background:#ffebe5;color:#8b4534}.iconbtn{display:inline-flex;justify-content:center;align-items:center;width:38px;min-height:38px;border-radius:6px}.iconbtn:hover{background:#e8ede1}.overlay{position:fixed;inset:0;background:#18281f70;z-index:10;display:flex;align-items:center;justify-content:flex-end;backdrop-filter:blur(3px)}.editor{width:740px;max-width:100%;height:100%;background:#fafbf7;display:flex;flex-direction:column;box-shadow:-12px 0 60px #17302526}.edithead{display:flex;justify-content:space-between;align-items:center;padding:28px 30px;border-bottom:1px solid #e3e8dc}.edithead small{font-size:9px;letter-spacing:1px;color:#8c987f}.edithead h2{margin:7px 0 0;font-size:22px;letter-spacing:-.7px}.edittabs{display:flex;padding:0 25px;gap:10px;border-bottom:1px solid #dfe6d7;overflow:auto;flex-shrink:0}.edittabs button{font-size:12px;white-space:nowrap;padding:18px 10px;border-bottom:2px solid transparent;color:#88957c}.edittabs button.on{color:#2c5139;border-color:#2c5139}.editor form{display:flex;flex-direction:column;min-height:0;flex:1}.editbody{overflow-y:auto;padding:28px 30px;flex:1}.editbody label{display:block;font-size:11px;font-weight:600;color:#64735a;margin-bottom:19px}.editbody input,.editbody textarea,.editbody select{display:block;width:100%;border:1px solid #dbe2d2;background:#fff;border-radius:6px;padding:12px;color:#344a2d;margin-top:8px;min-width:0;min-height:43px}.editbody textarea{resize:vertical;line-height:1.7}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.formsection{margin:26px 0 18px;font-size:14px}.targetchoices{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.targetchoices button{min-height:40px;border:1px solid #dfe6d8;border-radius:6px;font-size:11px;padding:8px 12px;display:flex;align-items:center;gap:4px;background:white}.targetchoices button.on{background:#e6eddd;border-color:#b2c6a1;color:#416033}.linkinput{display:flex;align-items:center;gap:8px}.linkinput input{flex:1}.linkinput a{padding-top:8px}.priorityinput{display:flex!important;align-items:center;gap:13px}.priorityinput b{border-radius:50%;background:#e9eedf;padding:7px 10px;font-size:10px}.priorityinput input{margin:0}.editfoot{padding:17px 25px;border-top:1px solid #dfe5d8;background:#f4f6ef;display:flex;gap:12px;align-items:center;padding-bottom:max(17px,env(safe-area-inset-bottom))}.editfoot small{margin-right:auto;color:#8a967d;font-size:10px}.danger{color:#a76550}.qacard{background:#fff;border:1px solid #dfe5d6;border-radius:8px;padding:19px;margin-bottom:18px}.qacard h3{font-size:13px;margin:12px 0 18px}.qacard label:last-child{margin-bottom:0}.help{font-size:12px;color:#829075;line-height:1.8;margin:0 0 22px}.history{background:white;border:1px solid #e0e5d8;border-radius:9px;margin-top:23px}.historyrow{display:flex;align-items:center;gap:14px;padding:19px 16px;border-bottom:1px solid #e8edde;color:#7a8b6e}.historyrow:last-child{border-bottom:0}.historyrow>div{flex:1;min-width:0}.historyrow strong{font-size:12px;display:block;color:#405b34;overflow-wrap:anywhere}.historyrow small{display:block;margin-top:6px;font-size:10px}.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#294e3d;color:#fff;z-index:30;padding:14px 22px;border-radius:8px;font-size:12px;box-shadow:0 6px 30px #172e1930;display:flex;gap:10px;align-items:center;max-width:90vw}
+@media(min-width:1550px){.page{padding:50px 60px}.grid{gap:24px}.card{padding:26px}}@media(max-width:1190px){aside{width:210px;padding:30px 16px}main{margin-left:210px}.page{padding:32px 26px}header{padding:0 26px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.qa-note .badge{display:none}h1{font-size:27px}.titleline{align-items:flex-start}}@media(max-width:760px){aside{position:static;width:100%;padding:20px 20px 0;background:#eff2eb;border-right:0;border-bottom:1px solid #dfe5d8}.brand{font-size:24px}.brandmark{width:30px;height:30px}.workspace,.navlabel,.sidebottom{display:none}nav{display:flex;overflow:auto;gap:6px;margin:20px -7px 0;padding-bottom:9px}nav button{white-space:nowrap;flex-shrink:0;font-size:11px;padding:0 10px;gap:7px;height:40px}nav button svg{width:15px}main{margin:0}header{display:none}.page{padding:27px 20px}.titleline{display:block}.titleline .primary{margin-top:22px}.eyebrow{font-size:8px}h1{font-size:28px;max-width:340px;letter-spacing:-1.1px;margin:11px 0}.subtitle{line-height:1.7;max-width:310px}.stats{gap:8px;margin:26px 0 30px}.stats>button{padding:14px 10px}.stats span{font-size:9px;line-height:1.5}.stats span svg{display:none}.stats strong{font-size:28px;margin:10px 0 3px}.stats small{font-size:8px;line-height:1.5;display:block}.sectionhead{align-items:flex-start;flex-wrap:wrap}.sectionhead h2{font-size:18px}.tools{width:100%;margin-top:6px;flex-direction:row-reverse}.search{flex:1}.search input{width:100%}.filters{gap:2px;margin:17px -6px}.filters button{font-size:10px;padding:8px 9px}.grid{grid-template-columns:1fr;gap:13px;margin-top:17px}.card{padding:21px}.card h3{font-size:18px;margin-top:17px}.meta{font-size:11px}.tags span{font-size:10px}.nexttext{font-size:12px;min-height:0}.cardfoot{font-size:10px}.qa-note{padding:18px;align-items:flex-start;margin-top:22px}.qa-note strong{font-size:12px;line-height:1.6}.qa-note p{font-size:11px}footer{flex-direction:column;font-size:8px;gap:8px}.welcome{padding:35px 20px}.welcome h3{font-size:20px}.editor{width:100%}.edithead{padding:20px}.edithead h2{font-size:19px}.edittabs{padding:0 10px;gap:0}.edittabs button{font-size:10px;padding:16px 10px}.editbody{padding:23px 20px}.formgrid{grid-template-columns:1fr}.editfoot{padding-left:15px;padding-right:15px;gap:8px}.editfoot small{font-size:9px;max-width:100px;line-height:1.5}.editfoot .primary{margin-left:auto}.qacard{padding:16px}.toast{bottom:20px;width:max-content}.badge{font-size:10px}.cardtop .badge{max-width:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+aside{overflow-y:auto}
+aside nav{gap:3px}
+aside nav button{height:38px}
+aside nav button .cnt{margin-left:auto;font-size:10px;color:#93a08b;font-weight:500}
+aside nav button.selected .cnt{color:#4d6a52}
+aside nav button svg{flex-shrink:0}
+.navlabel.sp{margin-top:20px}
+.sidebottom{padding-top:18px}
+.sidebottom .bk{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 14px}
+.sidebottom .bk button{border:1px solid #d9e0d0;border-radius:6px;padding:7px 9px;font-size:10px;display:inline-flex;gap:6px;align-items:center;background:#f7f9f3}
+.sidebottom .bk button:hover{background:#e6ecdd}
+.sidebottom .linkish{text-decoration:underline;font-size:10px;color:#7a8a72}
+.stats{grid-template-columns:repeat(4,1fr)}
+.stats>button.static{cursor:default}
+.ghnote{font-size:11px;color:#8a967e;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:14px 0 0}
+.ghnote.warn{color:#8c6431}
+.secthead{display:flex;align-items:baseline;gap:12px;margin:38px 0 4px}
+.secthead h2{margin:0;font-size:19px;letter-spacing:-.5px}
+.secthead .n{font-size:11px;color:#929b89}
+.secthead a{margin-left:auto;font-size:11px;color:#6d8561;text-decoration:none}
+.secthead a:hover{text-decoration:underline}
+.blurb{font-size:12px;color:#869080;margin:0 0 4px}
+.card{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.card:hover{transform:translateY(-3px)}
+.cardmain{display:block;width:100%;text-align:left;padding:22px 22px 6px}
+.cardmain:focus-visible{outline-offset:-3px;border-radius:11px}
+.card h3{margin:18px 0 6px}
+.desc{font-size:11px;line-height:1.65;color:#6f7f66;margin:12px 0 0;overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:36px}
+.cardlinks{display:flex;gap:6px;flex-wrap:wrap;padding:8px 22px 0}
+.cardlinks a{font-size:10px;border:1px solid #e3e8dc;border-radius:5px;padding:6px 9px;text-decoration:none;color:#5d7352;display:inline-flex;gap:5px;align-items:center;background:#fafbf7;min-height:30px}
+.cardlinks a:hover{background:#eef2e7;border-color:#c5d3b8}
+.cardmeta{padding:14px 22px 20px;margin-top:auto}
+.cardmeta .carddivider{margin:6px 0 14px}
+.cardfoot{flex-wrap:wrap}
+.badge.review{background:#fcf0d9;color:#8c6431;border:1px dashed #e2c690}
+.badge.new{background:#e4eefb;color:#3f6590}
+.badge.paused{background:#eceee9;color:#7b8576}
+.cardtop .badges{margin-left:auto;display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.cardtop .badge{margin-left:0}
+.catchip{font-size:9px;color:#8a9a7e;letter-spacing:.3px}
+.filters button{min-height:34px}
+.filters{flex-wrap:wrap}
+.editbody select[multiple]{min-height:auto}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.editfoot .danger.txt{font-size:11px;padding:0 10px;width:auto;gap:6px}
+.flagrow{display:flex;gap:9px;align-items:center;font-size:12px;margin:0 0 18px;color:#6a7a5f}
+.flagrow input{width:auto!important;min-height:0!important;margin:0!important}
+.ghinfo{background:#f1f4ec;border:1px solid #e1e7d8;border-radius:8px;padding:12px 14px;font-size:11px;line-height:1.7;color:#6b7a62;margin-bottom:20px}
+.ghinfo b{color:#41583a}
+.hv{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:1190px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ aside{overflow:visible}
+ .navs{display:flex;overflow:auto;gap:6px;margin:20px -7px 0;padding-bottom:9px}
+ .navs .navlabel{display:none}
+ aside .navs nav{display:contents;margin:0;padding:0;overflow:visible}
+ aside nav button .cnt{margin-left:4px}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .cardmain{padding:21px 21px 6px}
+ .cardlinks{padding:8px 21px 0}
+ .cardmeta{padding:14px 21px 20px}
+}
+
+footer .linkish{text-decoration:underline;font-size:inherit;letter-spacing:inherit;color:inherit;padding:2px}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="editor"></div>
+<div id="toast-root" aria-live="polite"></div>
+<noscript><p style="padding:2rem">Gameboard needs JavaScript to run.</p></noscript>
+<script>
+(()=>{
+'use strict';
+/* ====================================================================
+   Gameboard — static project board for github.com/OuterHeavenX
+   - No backend, no build step. Runs on GitHub Pages or from a local file.
+   - Repo list + status come live from the public GitHub API (cached 1 hour).
+   - Your edits (status, bugs, QA, notes...) are saved in this browser's
+     localStorage. Use Backup > Export / Import to move them between devices.
+   ==================================================================== */
+const OWNER='OuterHeavenX';
+const KEY='gameboard.v2', GHKEY='gameboard.gh.v1';
+const GH_TTL=60*60*1000;
+
+/* ---------- Categories ---------- */
+const CATS=[
+ {id:'builders',name:'Builders & Kingdoms',blurb:'Towns, villages, kingdoms and management sims.'},
+ {id:'cozy',name:'Cozy & Life Sims',blurb:'Relaxed life, farming and crafting games.'},
+ {id:'defense',name:'Defense & Strategy',blurb:'Tower defense, RTS and siege games.'},
+ {id:'rpg',name:'RPGs & Tactics',blurb:'JRPGs, tactics / SRPGs and dungeon climbers.'},
+ {id:'action',name:'Action & Metroidvania',blurb:'Brawlers, platformers, stealth and shooters.'},
+ {id:'horror',name:'Horror & Survival',blurb:'Dread, scarcity and last stands.'},
+ {id:'tools',name:'Apps & Tools',blurb:'Things you use rather than play.'},
+ {id:'lab',name:'Prototypes & Experiments',blurb:'Tests, spikes and ideas not yet sorted into a genre.'}
+];
+const catName=id=>(CATS.find(c=>c.id===id)||{name:'Unsorted'}).name;
+
+/* ---------- Seed manifest: [repo, display name, category, engine, guessed?] ----------
+   "guessed" = category inferred from the repo name only. Open the project and Save
+   (or change the category) to confirm it. */
+const M=[
+ ['Meadowline','Meadowline','builders','Browser'],
+ ['The-Village','The Village','builders','Browser'],
+ ['The-Settlement-','The Settlement','builders','Browser',1],
+ ['kingdom-of-nobodies','Kingdom of Nobodies','builders','Browser / three.js'],
+ ['greyhaven-town','Greyhaven Town','builders','Browser',1],
+ ['citadel-of-vesper','Citadel of Vesper','builders','Browser',1],
+ ['mech-junkyard-','Mech Junkyard','builders','Browser',1],
+ ['Idle-Guild-Master','Idle Guild Master','builders','Browser'],
+ ['settlers-remake','Settlers Remake (fork)','builders','',1],
+
+ ['tiny-living-world','Tiny Living World','cozy','Browser / three.js'],
+ ['chill-town','Chill Town','cozy','Browser'],
+ ['Alchemy-Island','Alchemy Island','cozy','Browser',1],
+ ['Codex-Farm-Challenge','Codex Farm Challenge','cozy','Browser'],
+ ['rockstar-life','Rockstar Life','cozy','Browser',1],
+
+ ['hoard-defense','Hoard Defense','defense','Browser'],
+ ['Bridgehold','Bridgehold','defense','Browser'],
+ ['Fun-TD','Fun TD','defense','Browser'],
+ ['Thugs-RTS','Thugs RTS','defense','Browser'],
+ ['Vampires-vs-Wolves','Vampires vs Wolves','defense','Browser',1],
+ ['Castle-of-the-Last-Warden','Castle of the Last Warden','defense','Browser',1],
+ ['The-Last-Watch','The Last Watch','defense','Browser',1],
+ ['cabin-under-siege','Cabin Under Siege','defense','Browser',1],
+
+ ['ff7like','Echoes of the Last Dawn','rpg','Godot'],
+ ['SAFE-HAVEN--JRPG','Safe Haven (JRPG)','rpg','Browser'],
+ ['SafeHaven','SafeHaven (early repo)','rpg','Browser',1],
+ ['TheRPG','The RPG','rpg','Browser',1],
+ ['toon-quest','Toon Quest','rpg','Browser',1],
+ ['godot-2.5D-rpg','Godot 2.5D RPG','rpg','Godot'],
+ ['vesper-godot','Vesper (Godot)','rpg','Godot',1],
+ ['echoes','Echoes','rpg','Browser',1],
+ ['tactics-core','Tactics Core','rpg','Browser',1],
+ ['DeepSRPG','Deep SRPG','rpg','Browser'],
+ ['100-Floors','100 Floors','rpg','Browser',1],
+
+ ['Shadow-Streets','Shadow Streets','action','Browser'],
+ ['backsteet-oath','Backsteet Oath','action','Browser',1],
+ ['sidewalk-kings','Sidewalk Kings','action','Browser',1],
+ ['godot-metroidvania-starter','Godot Metroidvania Starter','action','Godot'],
+ ['nocturne-reliquary','Nocturne Reliquary','action','Browser',1],
+ ['neon-blood-ransom','Neon Blood Ransom','action','Browser',1],
+ ['Starbound-Velocity','Starbound Velocity','action','Browser',1],
+ ['solidsnake','Solid Snake','action','Browser',1],
+ ['Phantom-Protocol','Phantom Protocol','action','Browser',1],
+ ['shadowline','Shadowline','action','Browser',1],
+ ['Grim-survivor','Grim Survivor','action','Browser',1],
+ ['TheCatfather','The Catfather','action','Browser',1],
+
+ ['Last-light-','Last Light','horror','Browser',1],
+ ['deadwatch','Deadwatch','horror','Browser',1],
+ ['dead-air','Dead Air','horror','Browser',1],
+ ['graveshift','Graveshift','horror','Browser',1],
+ ['VEILBOUND','Veilbound','horror','Browser',1],
+ ['heathens-game','Heathens','horror','Browser',1],
+
+ ['GameBoard','Gameboard (this app)','tools','Static web app'],
+ ['oft-team-board','OFT Team Grading Board','tools','Web app'],
+ ['password-vault','Password Vault','tools','Web app'],
+ ['selah','Selah Study Bible','tools','Web app'],
+ ['greyhaven-pipeline','Greyhaven Pipeline','tools','',1],
+ ['LEVEL-IRL','Level IRL','tools','',1],
+ ['backup-plan','Backup Plan','tools','',1],
+
+ ['pixelCookTest','Pixel Cook Test','lab','Browser'],
+ ['picquad','Picquad','lab','Browser',1],
+ ['ExMob','ExMob','lab','Browser',1]
+];
+
+const STAGES=['Active','Paused','Blocked','Ready to release'];
+const TARGETS=['Browser','iPhone','Steam Deck','Windows','Linux'];
+const QA_KIND_TARGET={'Browser QA':'Browser','Real iPhone':'iPhone','Real Steam Deck':'Steam Deck'};
+const qaDefaults=()=>[
+ {label:'Build and automated tests',kind:'Automated',status:'Not tested',date:'',device:'CI / local runner',notes:''},
+ {label:'Browser gameplay and save / reload',kind:'Browser QA',status:'Not tested',date:'',device:'',notes:''},
+ {label:'Touch controls, scrolling and safe areas',kind:'Real iPhone',status:'Not tested',date:'',device:'',notes:''},
+ {label:'Controller, 1280×800 and save / resume',kind:'Real Steam Deck',status:'Not tested',date:'',device:'',notes:''}];
+const defaults=()=>({name:'',cat:'lab',engine:'',version:'',status:'',repo:'',live:'',itch:'',build:'',targets:['Browser'],bugs:'',done:'',pending:'',priorities:['','',''],blocker:'',qa:qaDefaults(),logs:[],confirmed:false});
+const FIELDS=['name','cat','engine','version','status','repo','live','itch','build','targets','bugs','done','pending','priorities','blocker','qa','logs','confirmed'];
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(u||'')?u:'';
+const lines=v=>String(v||'').split('\n').filter(x=>x.trim());
+const uid=()=>(crypto.randomUUID?crypto.randomUUID():'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,8));
+const today=()=>new Date().toISOString().slice(0,10);
+const clone=o=>JSON.parse(JSON.stringify(o));
+const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
+function ago(iso){if(!iso)return '';const d=(Date.now()-new Date(iso))/864e5;if(d<1){const h=Math.floor(d*24);return h<1?'just now':h+'h ago'}if(d<30)return Math.floor(d)+'d ago';if(d<365)return Math.floor(d/30)+'mo ago';return Math.floor(d/365)+'y ago'}
+function pretty(n){return n.replace(/[-_]+$/,'').replace(/[-_]+/g,' ').replace(/([a-z])([A-Z])/g,'$1 $2').replace(/\b\w/g,c=>c.toUpperCase())}
+
+const ICONS={
+ dash:'<rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>',
+ layers:'<path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="m2 13 10 5 10-5"/>',
+ alert:'<path d="M12 8v5"/><path d="M12 16h.01"/><path d="M7.9 2h8.2L22 7.9v8.2L16.1 22H7.9L2 16.1V7.9z"/>',
+ rocket:'<path d="M12 3c4 1 7 4 7 9l-4 4H9l-4-4c0-5 3-8 7-9z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 16l-2 5 5-2M15 16l2 5-5-2"/>',
+ git:'<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7"/><path d="M18 15.5V9a3 3 0 0 0-3-3h-3"/>',
+ plus:'<path d="M12 5v14M5 12h14"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+ up:'<path d="M7 17 17 7"/><path d="M8 7h9v9"/>',
+ x:'<path d="M18 6 6 18M6 6l12 12"/>',
+ check:'<path d="m5 12 5 5 9-10"/>',
+ pad:'<rect x="2" y="6" width="20" height="12" rx="5"/><path d="M6 12h4M8 10v4"/><circle cx="15" cy="12" r=".8"/><circle cx="18" cy="11" r=".8"/>',
+ ext:'<path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+ refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>',
+ trash:'<path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/>',
+ down:'<path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>',
+ upl:'<path d="M12 16V5"/><path d="m7 9 5-5 5 5"/><path d="M5 20h14"/>',
+ flask:'<path d="M9 3h6"/><path d="M10 3v6L4.5 19a1.5 1.5 0 0 0 1.3 2h12.4a1.5 1.5 0 0 0 1.3-2L14 9V3"/>',
+ phone:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+ arrow:'<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>',
+ folder:'<path d="M3 6h6l2 2h10v11H3z"/>',
+ play:'<path d="m7 4 13 8-13 8z"/>',
+ gh:'<path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 0 0-1.300-3.200 4.200 4.200 0 0 0-.1-3.200s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.200 4.200 0 0 0-.1 3.200A4.600 4.600 0 0 0 4 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/>'
+};
+const ic=(n,s=18)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]||''}</svg>`;
+
+/* ---------- storage ---------- */
+function loadStore(){
+ try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object')return{over:s.over||{},custom:s.custom||[],hidden:s.hidden||[]}}catch(e){}
+ return{over:{},custom:[],hidden:[]};
+}
+let store=loadStore();
+function persist(){
+ try{localStorage.setItem(KEY,JSON.stringify(store));return true}
+ catch(e){toast('Could not save in this browser (storage is blocked or full). Use Backup › Export so you do not lose edits.',true);return false}
+}
+let gh={repos:[],t:0,err:'',loading:false};
+function loadGhCache(){try{const c=JSON.parse(localStorage.getItem(GHKEY)||'null');if(c&&Array.isArray(c.repos)){gh.repos=c.repos;gh.t=c.t||0}}catch(e){}}
+async function fetchGh(force){
+ if(!force&&gh.repos.length&&Date.now()-gh.t<GH_TTL)return;
+ gh.loading=true;gh.err='';render();
+ try{
+  let all=[];
+  for(let page=1;page<=5;page++){
+   const r=await fetch(`https://api.github.com/users/${OWNER}/repos?per_page=100&sort=pushed&page=${page}`,{headers:{Accept:'application/vnd.github+json'}});
+   if(!r.ok){throw new Error(r.status===403||r.status===429?'GitHub rate limit reached — try again in a bit.':'GitHub returned '+r.status+'.')}
+   const batch=await r.json();
+   all=all.concat(batch.map(x=>({name:x.name,html_url:x.html_url,description:x.description||'',language:x.language||'',topics:x.topics||[],pushed_at:x.pushed_at,stars:x.stargazers_count,has_pages:!!x.has_pages,homepage:x.homepage||'',archived:!!x.archived,fork:!!x.fork})));
+   if(batch.length<100)break;
+  }
+  gh.repos=all;gh.t=Date.now();
+  try{localStorage.setItem(GHKEY,JSON.stringify({t:gh.t,repos:all}))}catch(e){}
+ }catch(e){
+  gh.err=(e&&e.message&&!/Failed to fetch|NetworkError|Load failed/i.test(e.message))?e.message:'Could not reach GitHub.';
+  if(gh.repos.length)gh.err+=' Showing the last saved copy'+(gh.t?' ('+ago(new Date(gh.t).toISOString())+')':'')+'.';
+ }finally{gh.loading=false;render()}
+}
+
+/* ---------- project model ---------- */
+function suggest(r){
+ const t=(r.name+' '+r.description+' '+(r.topics||[]).join(' ')).toLowerCase();
+ const rules=[
+  ['tools',/\b(tool|app|dashboard|tracker|vault|manager|pipeline|bible|planner|board)\b/],
+  ['defense',/tower|defen[cs]e|\brts\b|siege|strategy|warden|garrison/],
+  ['rpg',/\brpg\b|jrpg|tactic|dungeon|quest/],
+  ['builders',/city|village|kingdom|town|settle|builder|colony|idle|tycoon|castle/],
+  ['cozy',/farm|cozy|life sim|garden|craft|island/],
+  ['horror',/horror|surviv|zombie|ghost|dead|haunt|dark/],
+  ['action',/platform|metroidvania|brawl|beat|shooter|action|stealth|fight|racing|roguelike/]];
+ for(const[id,re]of rules)if(re.test(t))return id;
+ return 'lab';
+}
+function bases(){
+ const ghMap=new Map(gh.repos.map(r=>[r.name.toLowerCase(),r]));
+ const seen=new Set(),out=[];
+ for(const[repo,name,cat,engine,guess]of M){
+  const id=repo.toLowerCase();seen.add(id);
+  out.push({base:{id,name,cat,engine,guess:!!guess,repo:`https://github.com/${OWNER}/${repo}`,repoName:repo},g:ghMap.get(id)||null});
+ }
+ for(const r of gh.repos){
+  const id=r.name.toLowerCase();if(seen.has(id))continue;
+  out.push({base:{id,name:pretty(r.name),cat:suggest(r),engine:'',guess:true,isNew:true,repo:r.html_url,repoName:r.name},g:r});
+ }
+ return out.filter(x=>!store.hidden.includes(x.base.id));
+}
+function build(base,g,useOver){
+ const o=useOver?(store.over[base.id]||{}):{};
+ const p=Object.assign(defaults(),base,o);
+ p.gh=g||null;
+ if(!p.engine&&g&&g.language)p.engine=g.language;
+ if(!p.status)p.status=g&&g.pushed_at&&(Date.now()-new Date(g.pushed_at))/864e5>30?'Paused':'Active';
+ if(p.confirmed)p.guess=false;
+ return p;
+}
+function allProjects(){
+ const list=bases().map(({base,g})=>build(base,g,true));
+ for(const c of store.custom)list.push(Object.assign(defaults(),c,{custom:true,gh:null,status:c.status||'Active'}));
+ return list;
+}
+const liveUrl=p=>safeUrl(p.live)||(p.gh&&safeUrl(p.gh.homepage))||(p.gh&&p.gh.has_pages&&!p.custom?`https://${OWNER.toLowerCase()}.github.io/${p.repoName}/`:'');
+const needsReview=p=>!p.custom&&p.guess;
+function applicable(p){return p.qa.filter(q=>{const t=QA_KIND_TARGET[q.kind];return !t||p.targets.includes(t)})}
+/* Release gate: version set, no open bugs, every applicable QA item Passed or Not applicable. */
+const ready=p=>!lines(p.bugs).length&&!!p.version.trim()&&applicable(p).every(q=>q.status==='Passed'||q.status==='Not applicable');
+
+/* ---------- UI state ---------- */
+const ui={view:'overview',q:'',filter:'all'};
+let edit=null,editOrig='',editTab='Details',lastFocus=null,toastT=null;
+function parseHash(){
+ const h=location.hash.replace(/^#\/?/,'');
+ if(!h)ui.view='overview';
+ else if(h==='activity')ui.view='activity';
+ else if(/^c\/[\w-]+$/.test(h))ui.view='c:'+h.slice(2);
+ else if(/^s\/.+$/.test(h))ui.view='s:'+decodeURIComponent(h.slice(2));
+ else ui.view='overview';
+}
+const go=v=>{location.hash=v==='overview'?'#/':v==='activity'?'#/activity':v.startsWith('c:')?'#/c/'+v.slice(2):'#/s/'+encodeURIComponent(v.slice(2))};
+function viewTitle(){
+ if(ui.view==='overview')return 'Your games. Moving forward.';
+ if(ui.view==='activity')return 'Recent activity';
+ if(ui.view.startsWith('c:'))return catName(ui.view.slice(2));
+ return ui.view.slice(2);
+}
+function visible(list){
+ const q=ui.q.trim().toLowerCase();
+ return list.filter(p=>{
+  if(ui.view.startsWith('c:')&&p.cat!==ui.view.slice(2))return false;
+  if(ui.view.startsWith('s:')&&p.status!==ui.view.slice(2))return false;
+  if(ui.view==='overview'&&ui.filter!=='all'){
+   if(ui.filter==='review'){if(!needsReview(p))return false}
+   else if(p.status!==ui.filter)return false;
+  }
+  if(!q)return true;
+  return [p.name,p.engine,catName(p.cat),p.repoName,p.gh&&p.gh.description,p.blocker,...p.targets].join(' ').toLowerCase().includes(q);
+ });
+}
+const byRecent=(a,b)=>((b.gh&&b.gh.pushed_at)||'').localeCompare((a.gh&&a.gh.pushed_at)||'')||a.name.localeCompare(b.name);
+
+/* ---------- rendering ---------- */
+function side(all){
+ const nav=(v,icon,label,cnt,extra='')=>`<button data-go="${esc(v)}" class="${ui.view===v?'selected':''}">${ic(icon,17)}<span>${esc(label)}</span>${cnt!=null?`<span class="cnt">${cnt}</span>`:''}${extra}</button>`;
+ const c=id=>all.filter(p=>p.cat===id).length;
+ const blocked=all.filter(p=>p.status==='Blocked').length;
+ return `<aside><a class="brand" href="#/" aria-label="Gameboard home"><span class="brandmark">▦</span> gameboard<span class="branddot">.</span></a>
+ <div class="workspace"><div class="avatar">JV</div><div>${esc(OWNER)}<small>Independent game studio</small></div></div>
+ <div class="navs"><div class="navlabel">BOARD</div>
+ <nav aria-label="Board">${nav('overview','dash','Overview',all.length)}${nav('activity','git','Recent activity',null)}</nav>
+ <div class="navlabel sp">CATEGORIES</div>
+ <nav aria-label="Categories">${CATS.map(k=>nav('c:'+k.id,'folder',k.name,c(k.id))).join('')}</nav>
+ <div class="navlabel sp">STAGE</div>
+ <nav aria-label="Stage">${nav('s:Blocked','alert','Blocked',blocked||null)}${nav('s:Ready to release','rocket','Ready to release',all.filter(p=>p.status==='Ready to release').length||null)}</nav></div>
+ <div class="sidebottom"><strong>Backup</strong>
+  <p style="margin:6px 0 4px">Edits live in this browser. Export to move them to another device.</p>
+  <div class="bk"><button data-act="export">${ic('down',13)}Export</button><button data-act="import">${ic('upl',13)}Import</button></div>
+  ${store.hidden.length?`<button class="linkish" data-act="unhide">Restore ${store.hidden.length} hidden project${store.hidden.length>1?'s':''}</button>`:''}
+  <input type="file" id="importfile" class="hv" accept="application/json,.json" tabindex="-1">
+ </div></aside>`;
+}
+function card(p,i){
+ const passed=p.qa.filter(q=>q.status==='Passed').length;
+ const live=liveUrl(p), repo=safeUrl(p.repo), g=p.gh;
+ const tone=p.status==='Blocked'?'amber':p.status==='Ready to release'?'green':p.status==='Paused'?'paused':'blue';
+ const label=p.status==='Active'?'In development':p.status;
+ const next=p.status==='Blocked'&&p.blocker?p.blocker:(p.priorities.find(x=>x.trim())||'');
+ return `<div class="card">
+  <button class="cardmain" data-open="${esc(p.id)}" aria-label="Open ${esc(p.name)}">
+   <div class="cardtop"><div class="gameicon color${i%4}">${ic('pad',24)}</div>
+    <div class="badges">${p.isNew?'<span class="badge new">NEW REPO</span>':''}${needsReview(p)?'<span class="badge review" title="Category guessed from the repo name — open and Save to confirm">CHECK CATEGORY</span>':''}<span class="badge ${tone}">${esc(label)}</span></div></div>
+   <h3>${esc(p.name)}</h3>
+   <div class="meta">${esc(p.engine||'Engine not set')} <span>·</span> ${esc(p.version||'Version unverified')}${g&&g.pushed_at?` <span>·</span> pushed ${esc(ago(g.pushed_at))}`:''}</div>
+   <p class="desc">${esc((g&&g.description)||'No GitHub description yet.')}</p>
+  </button>
+  <div class="cardlinks">${repo?`<a href="${esc(repo)}" target="_blank" rel="noopener noreferrer">${ic('gh',13)}Repo</a>`:''}${live?`<a href="${esc(live)}" target="_blank" rel="noopener noreferrer">${ic('play',12)}Play</a>`:''}${safeUrl(p.itch)?`<a href="${esc(p.itch)}" target="_blank" rel="noopener noreferrer">${ic('ext',12)}itch.io</a>`:''}${safeUrl(p.build)?`<a href="${esc(p.build)}" target="_blank" rel="noopener noreferrer">${ic('down',12)}Build</a>`:''}</div>
+  <div class="cardmeta"><div class="tags">${p.targets.map(t=>`<span>${esc(t)}</span>`).join('')}</div><div class="carddivider"></div>
+   <div class="nextlabel">NEXT UP ${ic('arrow',13)}</div><p class="nexttext">${next?esc(next):'<em>Set your next three priorities</em>'}</p>
+   <div class="cardfoot"><span>${ic('alert',14)}${lines(p.bugs).length} open bugs</span><span>${ic('flask',14)}${passed}/${p.qa.length} QA passed</span></div></div>
+ </div>`;
+}
+function activityHtml(all,list){
+ const rows=[];
+ for(const p of list){
+  for(const l of p.logs)rows.push({title:l.title,sub:`${p.name} · ${l.type} · ${l.date}`,date:l.date,url:l.url});
+  if(p.gh&&p.gh.pushed_at)rows.push({title:'Pushed to '+p.repoName,sub:`${p.name} · GitHub · ${p.gh.pushed_at.slice(0,10)}`,date:p.gh.pushed_at.slice(0,10),url:safeUrl(p.repo)?p.repo.replace(/\/$/,'')+'/commits':''});
+ }
+ rows.sort((a,b)=>b.date.localeCompare(a.date));
+ if(!rows.length)return `<div class="empty">${ic('git',28)}<h3>No activity yet</h3><p>GitHub pushes appear here automatically. Add commits, PRs or releases by hand from a project's Changelog tab.</p></div>`;
+ return `<div class="history">${rows.slice(0,100).map(l=>`<div class="historyrow">${ic('git',20)}<div><strong>${esc(l.title)}</strong><small>${esc(l.sub)}</small></div>${safeUrl(l.url)?`<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(l.title)}">${ic('up',19)}</a>`:''}</div>`).join('')}</div>`;
+}
+function filtersHtml(all){
+ const reviewN=all.filter(needsReview).length;
+ const chips=[['all','All projects'],['Active','In development'],['Paused','Paused'],['Blocked','Blocked'],['Ready to release','Ready to release']];
+ if(reviewN)chips.push(['review','Check category ('+reviewN+')']);
+ return `<div class="filters" role="group" aria-label="Filter by stage">${chips.map(([k,l])=>`<button data-filter="${esc(k)}" class="${ui.filter===k?'on':''}" aria-pressed="${ui.filter===k}">${esc(l)}</button>`).join('')}</div>`;
+}
+function gridHtml(all){
+ const list=visible(all);
+ if(ui.view==='activity')return activityHtml(all,list);
+ if(!list.length)return `<div class="empty"><h3>${all.length?'No matching projects':'Loading your repositories…'}</h3><p>${all.length?'Adjust your search or filter.':'Pulling the list from GitHub.'}</p></div>`;
+ if(ui.view==='overview'){
+  const ids=CATS.map(c=>c.id);
+  return ids.map(id=>{
+   const items=list.filter(p=>p.cat===id).sort(byRecent);
+   if(!items.length)return '';
+   const cat=CATS.find(c=>c.id===id);
+   return `<div class="secthead"><h2>${esc(cat.name)}</h2><span class="n">${items.length}</span><a href="#/c/${id}">View all</a></div><p class="blurb">${esc(cat.blurb)}</p><div class="grid">${items.map(card).join('')}</div>`;
+  }).join('');
+ }
+ return `<div class="grid">${list.sort(byRecent).map(card).join('')}</div>`;
+}
+function stats(all){
+ const n=s=>String(all.filter(p=>p.status===s).length).padStart(2,'0');
+ return `<div class="stats">
+  <button data-go="overview" data-reset="1"><span>All projects ${ic('folder',17)}</span><strong>${String(all.length).padStart(2,'0')}</strong><small>Across ${CATS.length} categories</small></button>
+  <button data-filter-go="Active"><span>In development ${ic('layers',17)}</span><strong>${n('Active')}</strong><small>Pushed in the last 30 days</small></button>
+  <button data-go="s:Blocked"><span>Needs attention ${ic('alert',17)}</span><strong>${n('Blocked')}${all.some(p=>p.status==='Blocked')?'<i class="amberdot"></i>':''}</strong><small>Resolve a blocker to keep going</small></button>
+  <button data-go="s:Ready to release"><span>Ready to release ${ic('rocket',17)}</span><strong>${n('Ready to release')}</strong><small>Review device QA before shipping</small></button></div>`;
+}
+function render(){
+ const all=allProjects();
+ const root=$('#app');
+ const hadQ=document.activeElement&&document.activeElement.id==='q';
+ const status=gh.loading?'Syncing with GitHub…':gh.err?`<span>${esc(gh.err)}</span>`:gh.t?`Synced with GitHub ${esc(ago(new Date(gh.t).toISOString()))} · public repos only`:'';
+ root.innerHTML=side(all)+`<main><header><span>WORKSPACE <span class="slash">/</span> ${esc(viewTitle())}</span><div class="headerend"><span class="live-dot"></span> ${esc(OWNER)}<div class="avatar small">JV</div></div></header>
+ <section class="page"><div class="titleline"><div><div class="eyebrow">FROM NEXT COMMIT TO RELEASE</div><h1>${esc(viewTitle())}</h1><p class="subtitle">${ui.view.startsWith('c:')?esc((CATS.find(c=>c.id===ui.view.slice(2))||{}).blurb||''):'A clear view of what’s building, what’s stuck, and what’s next.'}</p></div><button class="primary" data-act="add">${ic('plus')} Add project</button></div>
+ ${stats(all)}
+ <div class="sectionhead"><div><h2>${ui.view==='overview'?'Project library':esc(viewTitle())}</h2><span>${visible(all).length} of ${all.length} projects</span></div><div class="tools"><button class="iconbtn" data-act="refresh" aria-label="Refresh from GitHub" ${gh.loading?'disabled':''}>${ic('refresh',17)}</button><label class="search">${ic('search',17)}<input id="q" type="search" placeholder="Find a project…" value="${esc(ui.q)}" aria-label="Find a project"></label></div></div>
+ <div class="ghnote ${gh.err?'warn':''}">${status}</div>
+ ${ui.view==='overview'?filtersHtml(all):''}
+ <div id="gridwrap">${gridHtml(all)}</div>
+ <div class="qa-note"><div class="noteicon">${ic('phone',21)}</div><div><strong>A passing build is only part of the story.</strong><p>Automated checks and real-device playtests are tracked separately. Record the device, date, and result before you release.</p></div><span class="badge">DEVICE QA MATTERS</span></div>
+ <footer><span>GAMEBOARD / BUILD WITH INTENTION</span><span>Edits saved in this browser · <button class="linkish" data-act="export">Export</button> · <button class="linkish" data-act="import">Import</button></span></footer></section></main>`;
+ if(hadQ){const q=$('#q');if(q){q.focus();const n=q.value.length;try{q.setSelectionRange(n,n)}catch(e){}}}
+}
+function renderGridOnly(){
+ const all=allProjects();$('#gridwrap').innerHTML=gridHtml(all);
+ const sub=document.querySelector('.sectionhead span');if(sub)sub.textContent=`${visible(all).length} of ${all.length} projects`;
+}
+
+/* ---------- editor ---------- */
+function openEditor(p){
+ lastFocus=document.activeElement;
+ edit=clone(Object.assign({},p,{gh:null}));edit.gh=p.gh;
+ editOrig=JSON.stringify(strip(edit));editTab='Details';
+ renderEditor();
+ const d=$('#editor .editor');if(d)d.focus();
+}
+const strip=p=>{const o={};for(const k of FIELDS.concat(['id']))o[k]=p[k];return o};
+const dirty=()=>edit&&JSON.stringify(strip(edit))!==editOrig;
+function closeEditor(force){
+ if(!edit)return;
+ if(!force&&dirty()&&!confirm('Close without saving your edits?'))return;
+ edit=null;$('#editor').innerHTML='';
+ if(lastFocus&&lastFocus.focus&&document.contains(lastFocus))lastFocus.focus();
+}
+function linkField(k,label,ph){const v=edit[k]||'';return `<label>${esc(label)}<div class="linkinput"><input type="url" data-f="${k}" placeholder="${esc(ph||'https://…')}" value="${esc(v)}">${safeUrl(v)?`<a href="${esc(v)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(label)}">${ic('ext',17)}</a>`:''}</div></label>`}
+function editorBody(){
+ const e=edit,g=e.gh;
+ if(editTab==='Details'){
+  return `${g?`<div class="ghinfo"><b>From GitHub:</b> ${esc(g.description||'no description')} · ${esc(g.language||'language n/a')} · last push ${esc(ago(g.pushed_at))}${g.fork?' · fork':''}${g.archived?' · archived':''}</div>`:''}
+  <div class="formgrid"><label>Project name<input required data-f="name" value="${esc(e.name)}" placeholder="Your next great game"></label>
+  <label>Category<select data-f="cat">${CATS.map(c=>`<option value="${c.id}" ${e.cat===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
+  <label>Engine / framework<input data-f="engine" value="${esc(e.engine)}"></label>
+  <label>Current version<input data-f="version" value="${esc(e.version)}" placeholder="e.g. v0.4.0"></label>
+  <label>Project stage<select data-f="status">${STAGES.map(x=>`<option ${e.status===x?'selected':''}>${x}</option>`).join('')}</select></label></div>
+  ${e.status==='Blocked'?`<label>What’s blocking progress?<textarea data-f="blocker" placeholder="Dependency, broken build, decision needed…">${esc(e.blocker)}</textarea></label>`:''}
+  ${e.status==='Ready to release'&&!ready(e)?`<div class="warning">Release checks are incomplete: confirm a version, resolve open bugs, and pass (or mark Not applicable) every applicable QA check. This stage is your manual decision.</div>`:''}
+  <label>Platform targets<div class="targetchoices">${TARGETS.map(t=>`<button type="button" data-tg="${t}" class="${e.targets.includes(t)?'on':''}" aria-pressed="${e.targets.includes(t)}">${e.targets.includes(t)?ic('check',14)+' ':''}${t}</button>`).join('')}</div></label>
+  <h3 class="formsection">Project links</h3>
+  <div class="formgrid">${linkField('repo','GitHub repository')}${linkField('live','Live build · GitHub Pages / Cloudflare','Leave blank to use the GitHub Pages address')}${linkField('itch','itch.io page')}${linkField('build','Steam Deck / downloadable build')}</div>
+  <h3 class="formsection">Next three priorities</h3>
+  ${e.priorities.map((p,i)=>`<label class="priorityinput"><b>${i+1}</b><input aria-label="Priority ${i+1}" data-pr="${i}" value="${esc(p)}" placeholder="${['The most important next step','Then tackle…','After that…'][i]}"></label>`).join('')}`;
+ }
+ if(editTab==='Features & bugs'){
+  return `<p class="help">One item per line. Move completed work into Completed features as you go.</p>`+[['bugs','Open bugs','Describe the issue and steps to reproduce'],['pending','Pending features','What still needs to be built?'],['done','Completed features','What is already working?']].map(([k,l,ph])=>`<label>${l} <span class="badge" id="cnt-${k}">${lines(e[k]).length}</span><textarea rows="6" data-f="${k}" data-count="${k}" placeholder="${ph}">${esc(e[k])}</textarea></label>`).join('');
+ }
+ if(editTab==='QA checklist'){
+  const last=[...e.qa].filter(q=>q.date&&q.device&&q.status!=='Not tested').sort((a,b)=>b.date.localeCompare(a.date))[0];
+  return `<div class="warning">Only select Passed for Real iPhone or Real Steam Deck after testing on that physical device. Browser emulation and automated tests do not count.</div>`+e.qa.map((q,i)=>`<div class="qacard"><span class="badge ${q.kind.startsWith('Real')?'green':'blue'}">${esc(q.kind)}</span><h3>${esc(q.label)}</h3><div class="formgrid">
+   <label>Result<select data-qa="${i}:status">${['Not tested','Passed','Failed','Blocked','Not applicable'].map(v=>`<option ${q.status===v?'selected':''}>${v}</option>`).join('')}</select></label>
+   <label>Test date<input type="date" data-qa="${i}:date" value="${esc(q.date)}"></label>
+   <label>Device / runner<input data-qa="${i}:device" value="${esc(q.device)}" placeholder="e.g. iPhone 15 Pro Max · Safari"></label>
+   <label>Notes / tested version<input data-qa="${i}:notes" value="${esc(q.notes)}" placeholder="Version, result, evidence URL…"></label></div></div>`).join('')+`<p class="help">Last tested device: ${esc(last?last.device:'No dated test recorded')}</p>`;
+ }
+ /* Changelog */
+ return `<p class="help">Record commits, pull requests and releases by hand. GitHub pushes also show up automatically under Recent activity.</p>
+ <div class="qacard"><label>Entry title<input id="lg-title" placeholder="Fixed mobile save persistence"></label>
+ <div class="formgrid"><label>Entry type<select id="lg-type">${['Commit','Pull request','Release'].map(v=>`<option>${v}</option>`).join('')}</select></label><label>Date<input type="date" id="lg-date" value="${today()}"></label></div>
+ <label>Commit / PR / release URL<input type="url" id="lg-url" placeholder="https://github.com/…"></label>
+ <button type="button" class="secondary" data-act="addlog">${ic('plus',16)}Add entry to project</button></div>`+
+ e.logs.map((l,i)=>`<div class="historyrow">${ic('git',20)}<div><strong>${esc(l.title)}</strong><small>${esc(l.type)} · ${esc(l.date)}</small></div>${safeUrl(l.url)?`<a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open changelog link">${ic('up',18)}</a>`:''}<button type="button" class="iconbtn" aria-label="Remove changelog entry" data-rmlog="${i}">${ic('x',16)}</button></div>`).join('');
+}
+function renderEditor(){
+ const e=edit;if(!e)return;
+ $('#editor').innerHTML=`<div class="overlay" data-overlay><section class="editor" role="dialog" aria-modal="true" aria-label="Project editor" tabindex="-1">
+ <div class="edithead"><div><small>PROJECT WORKSPACE · ${esc(catName(e.cat).toUpperCase())}</small><h2>${esc(e.name||'New project')}</h2></div><button class="iconbtn" aria-label="Close editor" data-act="closeedit">${ic('x',20)}</button></div>
+ <div class="edittabs" role="tablist">${['Details','Features & bugs','QA checklist','Changelog'].map(t=>`<button type="button" role="tab" aria-selected="${editTab===t}" data-tab="${esc(t)}" class="${editTab===t?'on':''}">${t}</button>`).join('')}</div>
+ <form id="editform"><div class="editbody" id="editbody">${editorBody()}</div>
+ <div class="editfoot">${e.custom?`<button type="button" class="danger iconbtn" aria-label="Delete project" data-act="delete">${ic('trash',18)}</button>`:`<button type="button" class="danger iconbtn txt" data-act="hide" title="Remove from this board (restorable)">${ic('trash',16)}Hide</button>`}
+ <small>Changes save when you tap Save project.</small><button type="submit" class="primary" id="savebtn" ${e.name.trim()?'':'disabled'}>Save project${ic('check',17)}</button></div></form></section></div>`;
+ const d=$('#editor .editor');if(d&&!d.contains(document.activeElement))d.focus();
+}
+function saveEdit(){
+ const p=edit;if(!p.name.trim())return;
+ p.confirmed=true;
+ if(p.custom){
+  const rec=strip(p);rec.custom=true;
+  const i=store.custom.findIndex(c=>c.id===p.id);
+  if(i>=0)store.custom[i]=rec;else store.custom.unshift(rec);
+ }else{
+  const src=bases().find(x=>x.base.id===p.id);
+  const ref=src?build(src.base,src.g,false):defaults();
+  const d={};for(const k of FIELDS)if(!same(p[k],ref[k]))d[k]=p[k];
+  store.over[p.id]=d;
+ }
+ if(persist()){closeEditor(true);render();toast('Project saved')}
+}
+
+/* ---------- toast / backup ---------- */
+function toast(msg,err){
+ const r=$('#toast-root');r.innerHTML=`<div class="toast" role="status">${ic(err?'alert':'check',17)}${esc(msg)}</div>`;
+ clearTimeout(toastT);toastT=setTimeout(()=>{r.innerHTML=''},err?7000:3500);
+}
+function doExport(){
+ const blob=new Blob([JSON.stringify({app:'gameboard',version:2,exported:new Date().toISOString(),...store},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`gameboard-backup-${today()}.json`;
+ document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+ toast('Backup downloaded');
+}
+function doImport(file){
+ const fr=new FileReader();
+ fr.onload=()=>{
+  try{
+   const d=JSON.parse(fr.result);
+   if(!d||d.app!=='gameboard'||typeof d.over!=='object'||!Array.isArray(d.custom)||!Array.isArray(d.hidden))throw 0;
+   if(!confirm('Replace the edits saved in this browser with the contents of this backup?'))return;
+   store={over:d.over,custom:d.custom,hidden:d.hidden};
+   if(persist()){render();toast('Backup restored')}
+  }catch(e){toast('That file is not a Gameboard backup.',true)}
+ };
+ fr.readAsText(file);
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-go],[data-open],[data-act],[data-filter],[data-filter-go],[data-tab],[data-tg],[data-rmlog]');
+ if(!t){ if(edit&&e.target.matches('[data-overlay]'))closeEditor(); return; }
+ if(t.dataset.go!==undefined){if(t.dataset.reset)ui.filter='all';go(t.dataset.go);return}
+ if(t.dataset.filterGo!==undefined){ui.filter=t.dataset.filterGo;ui.q='';if(ui.view==='overview')render();else go('overview');return}
+ if(t.dataset.filter!==undefined){ui.filter=t.dataset.filter;render();return}
+ if(t.dataset.open){const p=allProjects().find(x=>x.id===t.dataset.open);if(p)openEditor(p);return}
+ if(t.dataset.tab){editTab=t.dataset.tab;renderEditor();return}
+ if(t.dataset.tg){const k=t.dataset.tg;edit.targets=edit.targets.includes(k)?edit.targets.filter(x=>x!==k):[...edit.targets,k];renderEditor();return}
+ if(t.dataset.rmlog!==undefined){edit.logs.splice(+t.dataset.rmlog,1);renderEditor();return}
+ switch(t.dataset.act){
+  case 'add':{const p=Object.assign(defaults(),{id:uid(),custom:true,name:'',cat:ui.view.startsWith('c:')?ui.view.slice(2):'lab',engine:'Browser',status:'Active',gh:null});openEditor(p);break}
+  case 'refresh':fetchGh(true);break;
+  case 'export':doExport();break;
+  case 'import':$('#importfile').click();break;
+  case 'unhide':store.hidden=[];if(persist()){render();toast('Hidden projects restored')}break;
+  case 'closeedit':closeEditor();break;
+  case 'addlog':{const title=$('#lg-title').value.trim(),date=$('#lg-date').value;if(!title||!date)return;
+    edit.logs.unshift({title,type:$('#lg-type').value,url:$('#lg-url').value.trim(),date});renderEditor();break}
+  case 'delete':if(confirm('Permanently delete this project and its tracking notes?')){store.custom=store.custom.filter(c=>c.id!==edit.id);if(persist()){closeEditor(true);render();toast('Project deleted')}}break;
+  case 'hide':if(confirm('Hide this project from the board? Your GitHub repo is untouched, and you can restore it from the sidebar.')){const id=edit.id;store.hidden.push(id);delete store.over[id];if(persist()){closeEditor(true);render();toast('Project hidden')}}break;
+ }
+});
+document.addEventListener('input',e=>{
+ const t=e.target;
+ if(t.id==='q'){ui.q=t.value;renderGridOnly();return}
+ if(!edit)return;
+ if(t.dataset.f){edit[t.dataset.f]=t.value;
+  if(t.dataset.f==='name'){const b=$('#savebtn');if(b)b.disabled=!t.value.trim();const h=$('#editor h2');if(h)h.textContent=t.value||'New project'}
+  if(t.dataset.count){const c=$('#cnt-'+t.dataset.count);if(c)c.textContent=lines(t.value).length}
+  if(t.dataset.f==='repo'||t.dataset.f==='live'||t.dataset.f==='itch'||t.dataset.f==='build'){/* open-link icon refreshes on next tab render */}
+  return}
+ if(t.dataset.pr!==undefined){edit.priorities[+t.dataset.pr]=t.value;return}
+ if(t.dataset.qa){const[i,k]=t.dataset.qa.split(':');edit.qa[+i][k]=t.value}
+});
+document.addEventListener('change',e=>{
+ const t=e.target;
+ if(t.id==='importfile'){if(t.files[0])doImport(t.files[0]);t.value='';return}
+ if(!edit)return;
+ if(t.dataset.f==='status'||t.dataset.f==='cat'){edit[t.dataset.f]=t.value;renderEditor();return}
+ if(t.dataset.f&&t.dataset.f!=='name'){edit[t.dataset.f]=t.value}
+ if(t.dataset.qa){const[i,k]=t.dataset.qa.split(':');edit.qa[+i][k]=t.value}
+});
+document.addEventListener('submit',e=>{if(e.target.id==='editform'){e.preventDefault();saveEdit()}});
+document.addEventListener('keydown',e=>{
+ if(!edit)return;
+ if(e.key==='Escape'){e.preventDefault();closeEditor();return}
+ if(e.key==='Tab'){
+  const d=$('#editor .editor');if(!d)return;
+  const f=[...d.querySelectorAll('button,a[href],input,select,textarea')].filter(x=>!x.disabled&&x.offsetParent!==null);
+  if(!f.length)return;
+  const first=f[0],last=f[f.length-1];
+  if(e.shiftKey&&(document.activeElement===first||document.activeElement===d)){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
+window.addEventListener('hashchange',()=>{if(edit&&!dirty())closeEditor(true);parseHash();render();window.scrollTo(0,0)});
+window.addEventListener('beforeunload',e=>{if(dirty()){e.preventDefault();e.returnValue=''}});
+
+/* ---------- boot ---------- */
+parseHash();loadGhCache();render();fetchGh(false);
+})();
+
+</script>
+</body>
+</html>
