@@ -16,6 +16,8 @@ A calm, dense, professional control panel for one developer's 60+ projects. It s
 
 ## Tokens (do not add new ones without a reason)
 
+These live as CSS variables at the top of `style.css` inside `index.html`. Use the variables, never raw hex values, in components.
+
 **Type**
 - Headings: Manrope, 600–800. Body and UI: DM Sans.
 - Sizes: 10 / 11 / 12 / 14 / 19 / 34 px. Nothing between. Body text never below 11px.
@@ -32,7 +34,7 @@ A calm, dense, professional control panel for one developer's 60+ projects. It s
 | Surface (cards, inputs) | `#ffffff` | `#19211c` |
 | Border | `#e0e6da` | `#2a362e` |
 | Text | `#24352e` | `#dfe8e0` |
-| Muted text | `#869080` | `#8fa092` |
+| Muted text | `#667060` | `#8fa092` |
 | Primary | `#264c3b` | `#3d7358` |
 | Highlight (selected, tags) | `#e6ecdd` | `#243a2e` |
 | Warning / blocked | amber `#e0b25e` family | same hues, darker fills |
