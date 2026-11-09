@@ -6,7 +6,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -18,7 +18,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -26,12 +26,14 @@
   },
   "Bridgehold": {
    "bot": [
+    "play1",
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
+    "play1",
     "play2"
    ],
    "thumb": true
@@ -40,7 +42,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -51,7 +53,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play2"
@@ -62,7 +64,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -72,7 +74,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -82,7 +84,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -92,7 +94,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -103,7 +105,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1"
@@ -114,7 +116,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -126,7 +128,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -140,7 +142,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -154,11 +156,23 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
     "play2"
+   ],
+   "thumb": true
+  },
+  "Phantom-Protocol": {
+   "bot": [
+    "play1",
+    "title"
+   ],
+   "captured": "2026-11-09",
+   "shots": [
+    "title",
+    "play1"
    ],
    "thumb": true
   },
@@ -168,7 +182,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -182,7 +196,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -208,7 +222,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -220,7 +234,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -230,7 +244,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -251,7 +265,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play2"
@@ -262,7 +276,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -273,7 +287,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1"
@@ -285,7 +299,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1"
@@ -298,7 +312,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -310,7 +324,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -322,7 +336,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -336,7 +350,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -346,12 +360,14 @@
   },
   "citadel-of-vesper": {
    "bot": [
+    "play1",
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
+    "play1",
     "play2"
    ],
    "thumb": true
@@ -360,7 +376,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -371,7 +387,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play2"
@@ -384,7 +400,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -398,7 +414,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -412,7 +428,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -424,7 +440,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -434,7 +450,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -444,7 +460,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -456,7 +472,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -470,7 +486,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -483,7 +499,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1"
@@ -494,7 +510,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -518,7 +534,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -530,7 +546,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -540,7 +556,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -551,7 +567,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play2"
@@ -562,7 +578,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title"
    ],
@@ -573,7 +589,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1"
@@ -586,7 +602,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -600,7 +616,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -614,7 +630,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-09",
    "shots": [
     "title",
     "play1",
@@ -623,5 +639,5 @@
    "thumb": true
   }
  },
- "updated": "2026-11-08T20:29:35Z"
+ "updated": "2026-11-09T20:44:55Z"
 }
