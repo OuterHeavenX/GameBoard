@@ -6,7 +6,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -18,7 +18,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-09",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -30,7 +30,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -42,7 +42,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -53,7 +53,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play2"
@@ -64,7 +64,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -74,7 +74,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -84,7 +84,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -94,7 +94,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -105,7 +105,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -114,11 +114,13 @@
   },
   "Idle-Guild-Master": {
    "bot": [
+    "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
-    "title"
+    "title",
+    "play2"
    ],
    "thumb": true
   },
@@ -128,7 +130,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -142,7 +144,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -156,7 +158,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -169,7 +171,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-09",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -182,7 +184,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -196,7 +198,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -209,7 +211,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -222,7 +224,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -234,7 +236,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -254,7 +256,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-08",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -265,7 +267,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play2"
@@ -276,7 +278,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -287,7 +289,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -299,7 +301,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -312,7 +314,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -324,7 +326,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -336,7 +338,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -350,7 +352,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -374,7 +376,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -386,7 +388,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -394,11 +396,15 @@
   },
   "dead-air": {
    "bot": [
+    "play1",
+    "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
-    "title"
+    "title",
+    "play1",
+    "play2"
    ],
    "thumb": true
   },
@@ -407,7 +413,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play2"
@@ -420,7 +426,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -434,7 +440,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -448,7 +454,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -460,7 +466,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -470,7 +476,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -492,7 +498,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -506,7 +512,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -519,7 +525,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -530,7 +536,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -541,7 +547,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -554,7 +560,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -566,7 +572,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -576,7 +582,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -586,7 +592,17 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
+   "shots": [
+    "title"
+   ],
+   "thumb": true
+  },
+  "shadowline": {
+   "bot": [
+    "title"
+   ],
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -597,7 +613,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play2"
@@ -608,7 +624,7 @@
    "bot": [
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title"
    ],
@@ -619,7 +635,7 @@
     "play1",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1"
@@ -632,7 +648,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -646,7 +662,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -660,7 +676,7 @@
     "play2",
     "title"
    ],
-   "captured": "2026-11-16",
+   "captured": "2026-11-23",
    "shots": [
     "title",
     "play1",
@@ -669,5 +685,5 @@
    "thumb": true
   }
  },
- "updated": "2026-11-16T20:35:29Z"
+ "updated": "2026-11-23T22:20:57Z"
 }
